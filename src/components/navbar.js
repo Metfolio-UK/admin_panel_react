@@ -73,7 +73,9 @@ const Navbar = (props) => {
             </Row>}
             {
               isMobile(props.width) && 
-              <div style={{
+              <div 
+              onClick={props.showDrawer}
+               style={{
                 height:'40px',
                 paddingLeft:'12px',
                 paddingRight:'12px',
