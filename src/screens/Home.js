@@ -6,6 +6,7 @@ import Navbar from '../components/navbar';
 import SidebarFixed from '../components/sidebarFixed';
 import SidebarDrawer from '../components/sidebarDrawer';
 import SellOrders from '../components/sellOrders';
+import AdminHolding from '../components/adminHolding';
 const { Content, Footer } = Layout;
 
 
@@ -32,6 +33,11 @@ const Home = (props) => {
           <Navbar width={props.width} showDrawer={showDrawer}/>
           <div style={{height:'20px'}}/>
           <div style={{ padding:'12px' }}>
+
+            <AdminHolding/>
+
+
+
             <SellOrders className='mb-5 mb-xl-8'/>
           </div>
         </Content>
