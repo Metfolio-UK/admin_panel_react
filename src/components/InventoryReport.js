@@ -33,7 +33,7 @@ const InvReport = () => {
           backgroundColor:'white',
           borderRadius:'8px',
           justifyContent:'space-between',
-          marginBottom: '30px'
+          marginBottom: '20px'
         },
         fadedText:{
           fontFamily: 'Poppins',

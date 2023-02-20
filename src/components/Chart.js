@@ -4,19 +4,30 @@ import ApexCharts, {ApexOptions} from 'apexcharts';
 import {Dropdown1} from '../_metronic/partials/content/dropdown/Dropdown1.tsx';
 import {getCSS, getCSSVariableValue} from '../_metronic/assets/ts/_utils/DomHelpers.ts';
 import {useThemeMode} from '../_metronic/partials/layout/theme-mode/ThemeModeProvider.tsx';
-import { greyColor,blacky, tealColor } from '../const';
+import { greyColor,blacky, tealColor, navyColor, gray2Color } from '../const';
 import { css } from 'styled-components';
 
 const ChartsWidget1 = ({className}) => {
     const cssStyle = {
-        whiteColor:{
-            color:'#FFFFFF',
+        unselectedtypeChart:{
+          fontFamily: 'Poppins',
+          fontSize: '12px',
+          fontWeight: '600',
+          lineHeight: '18px',
+          letterSpacing: '0em',
+          color:greyColor,
         },
-        greyColor:{
-            color:'#80808F',
+        selectedtypeChart:{
+          fontFamily: 'Poppins',
+          fontSize: '12px',
+          fontWeight: '600',
+          lineHeight: '18px',
+          letterSpacing: '0em',
+          color:"white",
+          borderRadius:'12px'
         },
         ratio:{
-          color:"#80808F",
+          color:gray2Color,
           fontFamily: 'Poppins',
           fontSize: '12px',
           fontWeight: '500',
@@ -31,7 +42,6 @@ const ChartsWidget1 = ({className}) => {
           lineHeight: '21px',
           letterSpacing: '0em',
           textAlign: 'left',
-
         },
         ov:{
           fontFamily: 'Poppins',
@@ -40,7 +50,7 @@ const ChartsWidget1 = ({className}) => {
           lineHeight: '21px',
           letterSpacing: '0em',
           textAlign: 'left',
-          colors: blacky,
+          colors: greyColor,
           
         }
     };
@@ -72,7 +82,7 @@ const ChartsWidget1 = ({className}) => {
   }, [chartRef, mode]);
 
   return (
-    <div style={{marginBottom:'30px'}} className={`card ${className}`}>
+    <div className={`card ${className}`}>
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
@@ -86,7 +96,7 @@ const ChartsWidget1 = ({className}) => {
           <a
             className='btn btn-sm btn-color-muted btn-active btn-active-primary px-4'
             id='kt_charts_widget_2_year_btn'
-            style={cssStyle.greyColor}
+            style={cssStyle.unselectedtypeChart}
           >
             Month
           </a>
@@ -94,7 +104,7 @@ const ChartsWidget1 = ({className}) => {
           <a
             className='btn btn-sm btn-color-muted btn-active btn-active-primary px-4 me-1'
             id='kt_charts_widget_2_month_btn'
-            style={cssStyle.greyColor}
+            style={cssStyle.unselectedtypeChart}
           >
             Week
           </a>
@@ -102,7 +112,7 @@ const ChartsWidget1 = ({className}) => {
           <a
             className='btn btn-sm btn-color-muted btn-active btn-active-secondary active px-4 me-1'
             id='kt_charts_widget_2_week_btn'
-            style={cssStyle.whiteColor}
+            style={cssStyle.selectedtypeChart}
           >
             Day
           </a>
@@ -142,7 +152,8 @@ function getChartOptions(height) {
       },
     ],
     chart: {
-      fontFamily: 'inherit',
+      fontFamily: 'Poppins',
+      fontSize:'12px',
       type: 'bar',
       height: height,
       toolbar: {
