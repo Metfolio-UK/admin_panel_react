@@ -40,16 +40,21 @@ const Home = (props) => {
           <Navbar width={props.width} showDrawer={showDrawer}/>
           <div style={{height:'20px'}}/>
           <div style={{ padding:'20px' }}>
-            <div className='row'>
-              <div className='col'>
-              <AdminHolding className='mb-5 mb-xl-8'/>
-              <CustomerHolding className='mb-5 mb-xl-8'/>
-              </div>
-              <div className='col'>
-              <InvReport className='mb-5 mb-xl-8'/>
-            <ChartsWidget1 className='mb-5 mb-xl-8'/>
-            </div>
-            </div>
+
+            <Row>
+            <Col xs={24} sm={24} md={24} lg={8}>
+                <AdminHolding/>
+                <CustomerHolding/>
+              </Col>
+              
+              <Col xs={24} sm={24} md={24} lg={16} style={{paddingLeft: props.width<992 ? null : '20px'}}>
+              <InvReport/>
+                <ChartsWidget1/>
+              </Col>
+              
+              </Row>
+            
+              
             
             
             <BuyOrders className='mb-5 mb-xl-8'/>

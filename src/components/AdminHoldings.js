@@ -68,7 +68,7 @@ const AdminHolding = () => {
 
   return (
 
-    <Col style={{position:'relative'}} xs={24} sm={24} lg={16} xl={12}>
+    <Col style={{position:'relative'}}>
     <Row style={cssStyle.container}>
         <div>Admin Holding</div>
         <Row style={{marginTop:'12px'}}>
