@@ -4,6 +4,8 @@ import ApexCharts, {ApexOptions} from 'apexcharts';
 import {Dropdown1} from '../_metronic/partials/content/dropdown/Dropdown1.tsx';
 import {getCSS, getCSSVariableValue} from '../_metronic/assets/ts/_utils/DomHelpers.ts';
 import {useThemeMode} from '../_metronic/partials/layout/theme-mode/ThemeModeProvider.tsx';
+import { greyColor,blacky, tealColor } from '../const';
+import { css } from 'styled-components';
 
 const ChartsWidget1 = ({className}) => {
     const cssStyle = {
@@ -12,6 +14,34 @@ const ChartsWidget1 = ({className}) => {
         },
         greyColor:{
             color:'#80808F',
+        },
+        ratio:{
+          color:"#80808F",
+          fontFamily: 'Poppins',
+          fontSize: '12px',
+          fontWeight: '500',
+          lineHeight: '21px',
+          letterSpacing: '0em',
+          textAlign: 'left',
+        },
+        level:{
+          fontFamily: 'Poppins',
+          fontSize: '12px',
+          fontWeight: '500',
+          lineHeight: '21px',
+          letterSpacing: '0em',
+          textAlign: 'left',
+
+        },
+        ov:{
+          fontFamily: 'Poppins',
+          fontSize: '18px',
+          fontWeight: '500',
+          lineHeight: '21px',
+          letterSpacing: '0em',
+          textAlign: 'left',
+          colors: blacky,
+          
         }
     };
   const chartRef = useRef(null);
@@ -42,13 +72,13 @@ const ChartsWidget1 = ({className}) => {
   }, [chartRef, mode]);
 
   return (
-    <div className={`card ${className}`}>
+    <div style={{marginBottom:'30px'}} className={`card ${className}`}>
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bold fs-3 mb-1'>Overview</span>
+          <span style={cssStyle.ov}>Overview</span>
 
-          <span className='text-muted fw-semibold fs-7'>Buy:Sell Ratio (%)</span>
+          <span style={cssStyle.ratio}>Buy:Sell Ratio (%)</span>
         </h3>
 
         {/* begin::Toolbar */}
@@ -82,7 +112,7 @@ const ChartsWidget1 = ({className}) => {
       {/* end::Header */}
 
       {/* begin::Body */}
-      <div className='card-body'>
+      <div className='card-body' >
         {/* begin::Chart */}
         <div ref={chartRef} id='kt_charts_widget_2_chart' style={{height: '350px'}}></div>
         {/* end::Chart */}
@@ -138,7 +168,7 @@ function getChartOptions(height) {
       colors: ['transparent'],
     },
     xaxis: {
-      categories: ['1 Feb', '2 Feb', '3 Feb', '4 Feb', '5 Feb', '6 Feb'],
+      categories: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug'],
       axisBorder: {
         show: false,
       },
@@ -155,8 +185,13 @@ function getChartOptions(height) {
     yaxis: {
       labels: {
         style: {
-          colors: labelColor,
+          fontFamily: 'Poppins',
           fontSize: '12px',
+          fontWeight: '500',
+          lineHeight: '21px',
+          letterSpacing: '0em',
+          textAlign: 'left',
+          colors: labelColor,
         },
       },
     },
@@ -194,7 +229,7 @@ function getChartOptions(height) {
         },
       },
     },
-    colors: ['#FFA800', secondaryColor],
+    colors: ['#FFA800', tealColor],
     grid: {
       borderColor: borderColor,
       strokeDashArray: 4,
