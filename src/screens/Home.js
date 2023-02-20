@@ -47,9 +47,10 @@ const Home = (props) => {
                 <CustomerHolding/>
               </Col>
               
-              <Col xs={24} sm={24} md={24} lg={16} style={{paddingLeft: props.width<992 ? null : '20px'}}>
+              <Col xs={24} sm={24} md={24} lg={16} style={{paddingLeft: props.width<992 ? null : '20px' }} >
               <InvReport/>
-                <ChartsWidget1/>
+              
+              <ChartsWidget1 />
               </Col>
               
               </Row>
