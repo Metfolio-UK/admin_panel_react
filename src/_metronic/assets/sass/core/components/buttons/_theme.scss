@@ -115,7 +115,7 @@
     $color-active: var(--#{$prefix}#{$name}-inverse);
     $icon-color-active: var(--#{$prefix}#{$name}-inverse);
     $border-color-active: var(--#{$prefix}#{$name});
-    $bg-color-active: var(--#{$prefix}#{$name});
+    $bg-color-active: #464E5F;
 
     @include button-custom-variant(
       $color,

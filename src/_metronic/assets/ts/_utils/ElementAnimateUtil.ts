@@ -1,6 +1,6 @@
-import {DOMEventHandlerUtil} from './_DOMEventHandlerUtil'
-import {ElementStyleUtil} from './_ElementStyleUtil'
-import {getElementOffset} from './DomHelpers'
+import {DOMEventHandlerUtil} from './_DOMEventHandlerUtil.ts'
+import {ElementStyleUtil} from './_ElementStyleUtil.ts'
+import {getElementOffset} from './DomHelpers.ts'
 
 export class ElementAnimateUtil {
   public static animate(

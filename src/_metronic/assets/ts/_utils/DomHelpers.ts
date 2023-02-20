@@ -1,9 +1,9 @@
 import {OffsetModel} from './models/OffsetModel'
 import {ViewPortModel} from './models/ViewPortModel'
-import {ElementStyleUtil} from './_ElementStyleUtil'
-import {DataUtil} from './_DataUtil'
-import {ElementAnimateUtil} from './ElementAnimateUtil'
-import {getObjectPropertyValueByKey, toJSON} from './_TypesHelpers'
+import {ElementStyleUtil} from './_ElementStyleUtil.ts'
+import {DataUtil} from './_DataUtil.ts'
+import {ElementAnimateUtil} from './ElementAnimateUtil.ts'
+import {getObjectPropertyValueByKey, toJSON} from './_TypesHelpers.ts'
 
 function getCSS(el: HTMLElement, styleProp: string) {
   const defaultView = (el.ownerDocument || document).defaultView

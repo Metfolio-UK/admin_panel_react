@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from 'react'
-import {toAbsoluteUrl} from '../../../helpers'
+import {toAbsoluteUrl} from '../../../helpers/AssetHelpers.ts'
 
 export type ThemeModeType = 'dark' | 'light' | 'system'
 const systemMode = window.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light'
