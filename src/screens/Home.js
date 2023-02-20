@@ -48,12 +48,13 @@ const Home = (props) => {
               </Col>
               
               <Col xs={24} sm={24} md={24} lg={16} style={{paddingLeft: props.width<992 ? null : '20px'}}>
-              <InvReport/>
+               <InvReport/>
+                <div style={{height:'20px'}}/>
                 <ChartsWidget1/>
               </Col>
               
               </Row>
-            
+              <div style={{height: props.width>992 ? null :'20px'}}/>
               
             
             

@@ -84,7 +84,7 @@ const ChartsWidget1 = ({className}) => {
       {/* begin::Body */}
       <div className='card-body'>
         {/* begin::Chart */}
-        <div ref={chartRef} id='kt_charts_widget_2_chart' style={{height: '350px'}}></div>
+        <div ref={chartRef} id='kt_charts_widget_2_chart' style={{height: '360px'}}></div>
         {/* end::Chart */}
       </div>
       {/* end::Body */}
