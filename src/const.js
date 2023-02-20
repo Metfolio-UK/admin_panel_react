@@ -7,7 +7,7 @@ export const menuSelectedColor = '#2b2b40';
 export const tealColor = "#57B0BA";
 export const paginationColor = "#F3F6F9";
 export const navyColor = "#464E5F";
-
+export const blacky = "#212121";
 
 export const isMobile = (width) => {
     return width<768;
