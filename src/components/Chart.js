@@ -1,13 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useEffect, useRef} from 'react';
 import ApexCharts, {ApexOptions} from 'apexcharts';
-import {Dropdown1} from '../_metronic/partials/content/dropdown/Dropdown1.tsx';
 import {getCSS, getCSSVariableValue} from '../_metronic/assets/ts/_utils/DomHelpers.ts';
 import {useThemeMode} from '../_metronic/partials/layout/theme-mode/ThemeModeProvider.tsx';
 import { greyColor,blacky, tealColor, navyColor, gray2Color } from '../const';
-import { css } from 'styled-components';
 
-const ChartsWidget1 = ({className}) => {
+const ChartsWidget1 = () => {
     const cssStyle = {
         unselectedtypeChart:{
           fontFamily: 'Poppins',
@@ -55,7 +53,6 @@ const ChartsWidget1 = ({className}) => {
         }
     };
   const chartRef = useRef(null);
-  const {mode} = useThemeMode();
 
   const refreshChart = () => {
     if (!chartRef.current) {
@@ -63,7 +60,6 @@ const ChartsWidget1 = ({className}) => {
     }
 
     const height = parseInt(getCSS(chartRef.current, 'height'));
-
     const chart = new ApexCharts(chartRef.current, getChartOptions(height));
     if (chart) {
       chart.render();
@@ -79,16 +75,17 @@ const ChartsWidget1 = ({className}) => {
         chart.destroy();
       }
     };
-  }, [chartRef, mode]);
+    // refreshChart();
+  }, [chartRef]);
 
   return (
-    <div className={`card ${className}`}>
+    <div className={`card `}>
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
-          <span style={cssStyle.ov}>Overview</span>
+          <span className='card-label fw-bold fs-3 mb-1' style={cssStyle.ov}>Overview</span>
 
-          <span style={cssStyle.ratio}>Buy:Sell Ratio (%)</span>
+          <span className='text-muted fw-semibold fs-7' style={cssStyle.ratio}>Buy:Sell Ratio (%)</span>
         </h3>
 
         {/* begin::Toolbar */}
@@ -122,9 +119,9 @@ const ChartsWidget1 = ({className}) => {
       {/* end::Header */}
 
       {/* begin::Body */}
-      <div className='card-body' >
+      <div className='card-body'>
         {/* begin::Chart */}
-        <div ref={chartRef} id='kt_charts_widget_2_chart' style={{height: '360px'}}></div>
+        <div ref={chartRef} style={{height:'360px', width:'95%'}}></div>
         {/* end::Chart */}
       </div>
       {/* end::Body */}
@@ -151,11 +148,19 @@ function getChartOptions(height) {
         data: [76, 85, 101, 98, 87, 105],
       },
     ],
+    
     chart: {
+      events: {
+        mounted: (chart) => {
+          chart.windowResizeHandler();
+        }
+      },
       fontFamily: 'Poppins',
       fontSize:'12px',
       type: 'bar',
       height: height,
+      width:'100%',
+      redrawOnParentResize: true,
       toolbar: {
         show: false,
       },
@@ -180,16 +185,15 @@ function getChartOptions(height) {
     },
     xaxis: {
       categories: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug'],
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
+      
       labels: {
         style: {
+          fontFamily: 'Poppins',
           colors: labelColor,
           fontSize: '12px',
+          fontWeight: '500',
+          lineHeight: '21px',
+          letterSpacing: '0em',
         },
       },
     },
@@ -202,6 +206,7 @@ function getChartOptions(height) {
           lineHeight: '21px',
           letterSpacing: '0em',
           textAlign: 'left',
+
           colors: labelColor,
         },
       },
