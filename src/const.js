@@ -17,6 +17,9 @@ export const yellow3Color = "#FFC700";
 export const cyanColor = "#4FC9DA";
 
 
+export const userbasechartColor='#2F3044';
+export const seeall='#4FC9DA';
+export const sellOrderChartColor='#6AA2DE';
 export const isMobile = (width) => {
     return width<768;
 }

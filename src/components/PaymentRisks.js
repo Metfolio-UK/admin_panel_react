@@ -9,9 +9,8 @@ const PaymentRisks = () => {
     const cssStyle = {
         container : {
             display: 'flex',
-            flexDirection:'row',
+            flexDirection:'column',
             height:'120px',
-            width:'373px',
             backgroundColor:'white',
             fontFamily: 'Poppins',
             fontSize: '17px',
@@ -22,7 +21,6 @@ const PaymentRisks = () => {
             color:blacky,
             borderRadius:'12px',
             padding:'24px 30px',
-            justifyContent:'space-between',
             
         },
         blackdot:{
@@ -42,7 +40,6 @@ const PaymentRisks = () => {
             display: 'flex',
             flexDirection:'column',
             height:'316px',
-            width: '373px',
             backgroundColor:'white',
             borderRadius:'12px',
             padding:'32px',
@@ -118,12 +115,12 @@ const PaymentRisks = () => {
         <Col style={{position:'relative'}}>
             
             <Col style={cssStyle.container}>
-            <Row style={{justifyContent:'space-between'}}><div style={{marginLeft:'4px',marginTop:'4px',fontFamily: 'Poppins',fontSize: '18px',fontWeight: '600',lineHeight: '21px',}}>Payment Risks</div>
+            <Row style={{justifyContent:'space-between'}}><div style={{marginTop:'4px',fontFamily: 'Poppins',fontSize: '18px',fontWeight: '600',lineHeight: '21px',}}>Payment Risks</div>
             <Row style={{marginTop:'12px'}}>
             <div style={cssStyle.blackdotfaded}></div>
             <div style={cssStyle.blackdot}></div>
-            </Row>
-            <div style={{...cssStyle.fadedText,marginLeft:'4px',marginTop:'-20px',lineHeight:'21px'}}>Low/Medium/High Risk Distribution</div></Row>
+            </Row></Row>
+            <div style={{...cssStyle.fadedText,marginTop:'4px',lineHeight:'21px'}}>Low/Medium/High Risk Distribution</div>
 
             
             

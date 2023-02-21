@@ -1,6 +1,5 @@
 
 import Home from './screens/Home';
-import Orders from './screens/Orders';
 import {useEffect, useState} from 'react';
 function App() {
   const [width, setWindowWidth] = useState(0);

@@ -17,7 +17,7 @@ const Navbar = (props) => {
                 fontSize:'18px',
                 fontWeight:'600',
                 textAlign:'left'
-              }}>Orders</div>
+              }}>{props.heading}</div>
               <Row gutter={2} style={{
                 alignItems:'center'
               }}>
@@ -41,7 +41,7 @@ const Navbar = (props) => {
                 fontSize:'12px',
                 fontWeight:'500',
                 textAlign:'left'
-              }}>Orders</div>
+              }}>{props.heading}</div>
               </Row>
             </Col>
 { !isMobile(props.width) &&

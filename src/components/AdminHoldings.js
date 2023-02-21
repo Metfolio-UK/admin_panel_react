@@ -79,22 +79,22 @@ const AdminHolding = () => {
     <Col style={cssStyle.whiteContainer}>
         <Row style={{display:'flex', flexDirection:'row', justifyContent:'space-between', flexGrow:1}}>
             <Col>
-                <div style={cssStyle.fadedText}>Monetary Value</div>
-                <div style={cssStyle.navyText}>£4,500</div>
+                <div style={{...cssStyle.fadedText, textAlign:'left'}}>Monetary Value</div>
+                <div style={{...cssStyle.navyText, textAlign:'left'}}>£4,500</div>
             </Col>
             <Col>
-                <div style={cssStyle.fadedText}>Quantity (g)</div>
-                <div style={cssStyle.navyText}>45.564 g</div>
+                <div style={{...cssStyle.fadedText, textAlign:'right'}}>Quantity (g)</div>
+                <div style={{...cssStyle.navyText, textAlign:'right'}}>45.564 g</div>
             </Col>
         </Row>
         <Row style={{display:'flex', flexDirection:'row', justifyContent:'space-between', flexGrow:1}}>
             <Col>
-                <div style={cssStyle.fadedText}>Last 24 hrs</div>
-                <div style={cssStyle.navyText}>-£250</div>
+                <div style={{...cssStyle.fadedText, textAlign:'left'}}>Last 24 hrs</div>
+                <div style={{...cssStyle.navyText, textAlign:'left'}}>-£250</div>
             </Col>
             <Col>
-                <div style={cssStyle.fadedText}>Last 24 hrs</div>
-                <div style={cssStyle.navyText}>-45.235 g</div>
+                <div style={{...cssStyle.fadedText, textAlign:'right'}}>Last 24 hrs</div>
+                <div style={{...cssStyle.navyText, textAlign:'right'}}>-45.235 g</div>
             </Col>
         </Row>
     </Col>

@@ -11,11 +11,14 @@ import reportWebVitals from './reportWebVitals';
 import './_metronic/assets/sass/plugins.scss'
 import './_metronic/assets/sass/style.scss'
 import './_metronic/assets/sass/style.react.scss'
+import { BrowserRouter as Router } from "react-router-dom";
+ 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Router>
     <App />
-  </React.StrictMode>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
