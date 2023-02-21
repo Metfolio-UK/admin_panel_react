@@ -1,6 +1,5 @@
 import { Row,Col } from 'antd'
 import React from 'react'
-import styled from 'styled-components';
 import { getNameInitals, greyColor, nameSymbolColor, navyColor, paginationColor, tealColor, yellowColor } from '../const';
 
 const AdminHolding = () => {

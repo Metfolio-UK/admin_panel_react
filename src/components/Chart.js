@@ -6,6 +6,7 @@ import {useThemeMode} from '../_metronic/partials/layout/theme-mode/ThemeModePro
 import { greyColor,blacky, tealColor, navyColor, gray2Color } from '../const';
 
 const ChartsWidget1 = () => {
+  var loading = true;
     const cssStyle = {
         unselectedtypeChart:{
           fontFamily: 'Poppins',
@@ -69,6 +70,7 @@ const ChartsWidget1 = () => {
   };
 
   useEffect(() => {
+    
     const chart = refreshChart();
     return () => {
       if (chart) {
