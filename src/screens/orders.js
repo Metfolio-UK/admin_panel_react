@@ -17,7 +17,7 @@ const Orders = (props) => {
     className="site-layout"
     style={{  marginLeft: isMobile(props.width)?0: 150 }}>
     <Content>
-      <Navbar width={props.width} showDrawer={props.showDrawer}/>
+      <Navbar heading="Orders" width={props.width} showDrawer={props.showDrawer}/>
       <div style={{height:'20px'}}/>
       <div style={{ padding:'20px' }}>
 

@@ -2,15 +2,15 @@
 import React, {useEffect, useRef} from 'react'
 import ApexCharts from 'apexcharts'
 import {getCSS, getCSSVariableValue} from '../_metronic/assets/ts/_utils/DomHelpers.ts';
-import { getNameInitals, greyColor, nameSymbolColor, navyColor, paginationColor, tealColor, userbasechartColor, yellowColor } from '../const';
+import { getNameInitals, greyColor, nameSymbolColor, navyColor, paginationColor, seeall, sellOrderChartColor, tealColor, userbasechartColor, yellowColor } from '../const';
 import { Row,Col } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons';
 
 
-const UserBaseChart = ({ chartColor, chartHeight}) => {
+const SellOrderChart = ({ chartColor, chartHeight}) => {
   const chartRef = useRef(null);
   const cssStyle = {
-   
+    
     
     whiteContainer:{
         display: 'flex',
@@ -62,7 +62,7 @@ const UserBaseChart = ({ chartColor, chartHeight}) => {
         flexDirection:'row',
         padding:'32px',
         justifyContent:'space-between',
-        backgroundColor: userbasechartColor,
+        backgroundColor: sellOrderChartColor,
         borderRadius:'12px 12px 0px 0px',
     },
     seeAll:{
@@ -105,10 +105,10 @@ letterSpacing: '0em',
   }, [chartRef])
 
   return (
-    <div>
+    <div >
       <Row style={cssStyle.header}>
         <Col>
-            <div style={cssStyle.WhiteHeadText}>User Base</div>
+            <div style={cssStyle.WhiteHeadText}>Sell Orders</div>
             <div style={cssStyle.WhiteSubHeadText}>All Time</div>
         </Col>
         <Row style={cssStyle.seeAll}>
@@ -121,8 +121,8 @@ letterSpacing: '0em',
         <Col style={cssStyle.whiteContainer}>
             <Row style={{display:'flex', flexDirection:'row', justifyContent:'space-between', flexGrow:1}}>
                 <Col>
-                    <div style={{...cssStyle.fadedText, textAlign:'left'}}>Total Users</div>
-                    <div style={{...cssStyle.navyText, textAlign:'left'}}>556</div>
+                    <div style={{...cssStyle.fadedText, textAlign:'left'}}>Total Sell Orders</div>
+                    <div style={{...cssStyle.navyText, textAlign:'left'}}>£34,000</div>
                 </Col>
                 <Col>
                     <div style={{...cssStyle.fadedText, textAlign:'right'}}>QTY Sold (gram)</div>
@@ -146,6 +146,7 @@ letterSpacing: '0em',
 }
 
 const chart1Options = (chartColor, chartHeight) => {
+  const labelColor = getCSSVariableValue('black')
 
   return {
     series: [
@@ -160,10 +161,10 @@ const chart1Options = (chartColor, chartHeight) => {
               chart.windowResizeHandler();
             }
           },
+          background: sellOrderChartColor,
       fontFamily: 'Poppins',
       type: 'area',
       height: chartHeight,
-      background:userbasechartColor,
       toolbar: {
         show: false,
       },
@@ -174,16 +175,16 @@ const chart1Options = (chartColor, chartHeight) => {
         enabled: true,
       },
     },
-    fill: {
-        type: "solid",
-        colors: ['#000'],
-        opacity:1,
-    },
     stroke: {
       curve: 'smooth',
       show: true,
       width: 3,
-      colors: ["white"],
+      colors: ["black"],
+    },
+    fill: {
+        type: "solid",
+        colors: ['#fff'],
+        opacity:1,
     },
     xaxis: {
       categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
@@ -196,8 +197,7 @@ const chart1Options = (chartColor, chartHeight) => {
       labels: {
         show: false,
         style: {
-            fontFamily:'Poppins',
-          colors: "black",
+          colors: labelColor,
           fontSize: '12px',
         },
       },
@@ -214,9 +214,8 @@ const chart1Options = (chartColor, chartHeight) => {
       labels: {
         show: false,
         style: {
-            fontFamily:'Poppins',
-            colors: "black",
-            fontSize: '12px',
+          colors: labelColor,
+          fontSize: '12px',
         },
       },
     },
@@ -252,8 +251,7 @@ const chart1Options = (chartColor, chartHeight) => {
       },
     },
     colors: ["black"],
-   
   }
 }
 
-export default UserBaseChart
+export default SellOrderChart

@@ -10,6 +10,8 @@ export const navyColor = "#464E5F";
 export const blacky = "#212121";
 export const gray2Color='#80808F';
 export const userbasechartColor='#2F3044';
+export const seeall='#4FC9DA';
+export const sellOrderChartColor='#6AA2DE';
 export const isMobile = (width) => {
     return width<768;
 }
