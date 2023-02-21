@@ -1,4 +1,3 @@
-
 import {  Layout } from 'antd';
 import React,{useState} from 'react';
 import { Row,Col } from 'antd'
@@ -14,15 +13,12 @@ import { InvReport } from '../components/InventoryReport';
 import AdminHolding from '../components/AdminHoldings';
 import CustomerHolding from '../components/CustomerHoldings';
 import AverageOrder from '../components/AverageOrder';
-import Order from '../components/Orders';
-import DonutChart from '../components/DonutChart';
-import PaymentRisks from '../components/PaymentRisks';
 
 const { Content, Footer } = Layout;
 
 
 
-const Home = (props) => {
+const Orders = (props) => {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -45,22 +41,26 @@ const Home = (props) => {
           <div style={{height:'20px'}}/>
           <div style={{ padding:'20px' }}>
 
-            <Row style={{justifyContent:'space-evenly'}}>
-            <Col>
-                <Order/>
-              </Col>
-              <Col>
-                <PaymentRisks/>
-              </Col>
+            <Row>
             <Col xs={24} sm={24} md={24} lg={8}>
                 <AdminHolding/>
                 <CustomerHolding/>
-                <AverageOrder/> 
-                
               </Col>
-             
+              
+              <Col xs={24} sm={24} md={24} lg={16} style={{paddingLeft: props.width<992 ? null : '20px' }} >
+              <InvReport/>
+              
+              <ChartsWidget1 />
+              </Col>
               
               </Row>
+              <div style={{height: props.width>992 ? null :'20px'}}/>
+              
+            
+            
+            <BuyOrders className='mb-5 mb-xl-8'/>
+            <RecurringOrders className='mb-5 mb-xl-8'/>
+            <SellOrders className='mb-5 mb-xl-8'/>
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }} >
@@ -70,4 +70,4 @@ const Home = (props) => {
     </Layout>
   );
 };
-export default Home;
+export default Orders;
