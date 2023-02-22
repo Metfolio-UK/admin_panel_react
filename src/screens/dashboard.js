@@ -14,7 +14,7 @@ import UserBaseChart from '../components/userBaseChart';
 import BuyOrderChart from '../components/buyorderschart';
 import SellOrderChart from '../components/sellorderchart';
 import RecurringOrderChart from '../components/recurringorderchart';
-import Order from '../components/Orders';
+import Order from '../components/OrdersCharts';
 import PaymentRisks from '../components/PaymentRisks';
 import AverageOrder from '../components/AverageOrder';
 const { Content, Footer } = Layout;
