@@ -24,7 +24,7 @@ const Order = () => {
         },
         Bottomcontainer : {
             
-            top:'-55px',
+            top:'-45px',
             display: 'flex',
             flexDirection:'row',
             height:'90px',
@@ -36,8 +36,8 @@ const Order = () => {
             alignItems:'center',
             letterSpacing: '0em',
             color:blacky,
-            borderRadius:'12px',
             padding:'24px 30px',
+            borderTop: '1px solid #B5B5C3'
             
         },
         blackdot:{
@@ -97,14 +97,7 @@ const Order = () => {
             color:'white',
             marginTop:'17px',
         },
-        line:{
-            padding:'0px 0px',
-            height:'1px',
-            width:'110%',
-            opacity:'70%',
-            backgroundColor:greyColor,
-            marginTop:'30px'
-        },
+        
         colorDots:{
             height:'11px',
             width:'11px',
@@ -147,7 +140,6 @@ const Order = () => {
                <div style={{...cssStyle.navyText,fontWeight:'700'}}>£5234.56</div>
                <div style={{...cssStyle.fadedText,fontSize:"16px",textAlign:"center",lineHeight:'26px',letterSpacing:'-2%'}}>In the last 24 hrs, 75% of orders were buy orders</div>
                <div style={{...cssStyle.blueButton,textAlign:'center'}}>   View All Orders</div>
-               <div style={cssStyle.line}></div>
                
                
 

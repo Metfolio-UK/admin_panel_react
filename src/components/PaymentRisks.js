@@ -25,7 +25,7 @@ const PaymentRisks = () => {
         },
         Bottomcontainer : {
             
-            top:'-55px',
+            top:'-45px',
             display: 'flex',
             flexDirection:'row',
             height:'90px',
@@ -37,8 +37,8 @@ const PaymentRisks = () => {
             alignItems:'center',
             letterSpacing: '0em',
             color:blacky,
-            borderRadius:'12px',
             padding:'24px 30px',
+            borderTop: '1px solid #B5B5C3'
             
         },
         blackdot:{
@@ -146,7 +146,6 @@ const PaymentRisks = () => {
                <div style={{...cssStyle.navyText,fontWeight:'700'}}>8,345</div>
                <div style={{...cssStyle.fadedText,fontSize:"16px",textAlign:"center",lineHeight:'26px',letterSpacing:'-2%'}}>There were 4 high risk orders in the last 24 hrs</div>
                <div style={{...cssStyle.blueButton,textAlign:'center'}}>   View Orders</div>
-               <div style={cssStyle.line}></div>
                
                
 
