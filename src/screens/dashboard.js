@@ -14,6 +14,9 @@ import UserBaseChart from '../components/userBaseChart';
 import BuyOrderChart from '../components/buyorderschart';
 import SellOrderChart from '../components/sellorderchart';
 import RecurringOrderChart from '../components/recurringorderchart';
+import Order from '../components/Orders';
+import PaymentRisks from '../components/PaymentRisks';
+import AverageOrder from '../components/AverageOrder';
 const { Content, Footer } = Layout;
 const Dashboard = (props) => {
   return (
@@ -31,6 +34,18 @@ const Dashboard = (props) => {
             flexGrow:1,
             flexDirection:'column'
           }}>
+            <Row  style={{
+                    display:'flex',
+                    flexGrow:1, flexDirection:'row',
+                }}>
+                <Col style={{ paddingRight:props.width<992?null :'20px'  }} xs={24} sm={24} md={24} lg={12}>
+                <Order/>
+                </Col>
+                <Col style={{ paddingTop: props.width<992?'20px':null, paddingRight:props.width<1200?null :'20px'  }}  xs={24} sm={24} md={24} lg={12}>
+                <PaymentRisks/>
+                </Col>
+                
+            </Row>
             <Row  style={{
                     display:'flex',
                     flexGrow:1, flexDirection:'row',
@@ -71,6 +86,7 @@ const Dashboard = (props) => {
           <Col style={{paddingTop: props.width<1200?'20px':null,}} xs={24} sm={24} md={24} lg={24} xl={7}>
             <AdminHolding/>
             <CustomerHolding/>
+            <AverageOrder/>
           </Col>
           
           </Row>

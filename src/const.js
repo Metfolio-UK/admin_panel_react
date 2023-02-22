@@ -9,6 +9,14 @@ export const paginationColor = "#F3F6F9";
 export const navyColor = "#464E5F";
 export const blacky = "#212121";
 export const gray2Color='#80808F';
+export const redColor = "#F23F44";
+export const yellow2Color = "#FFA800";
+export const greenColor = "#50CD89";
+export const red2Color = "#F64E60";
+export const yellow3Color = "#FFC700";
+export const cyanColor = "#4FC9DA";
+
+
 export const userbasechartColor='#2F3044';
 export const seeall='#4FC9DA';
 export const sellOrderChartColor='#6AA2DE';

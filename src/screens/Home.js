@@ -1,4 +1,3 @@
-
 import {  Layout } from 'antd';
 import React,{useState} from 'react';
 import {isMobile} from '../const';
