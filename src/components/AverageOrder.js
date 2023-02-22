@@ -103,22 +103,22 @@ const AverageOrder = () => {
     <Col style={cssStyle.whiteContainer}>
         <Row style={{display:'flex', flexDirection:'row', justifyContent:'space-between', flexGrow:1}}>
             <Col>
-                <div style={cssStyle.yellowText}>00:00 - 06:00</div>
-                <div style={cssStyle.navyText}>12%</div>
+                <div style={{...cssStyle.yellowText,textAlign:'left'}}>00:00 - 06:00</div>
+                <div style={{...cssStyle.navyText,textAlign:'left'}}>12%</div>
             </Col>
             <Col>
-                <div style={cssStyle.greenText}>06:00 - 12:00</div>
-                <div style={cssStyle.navyText}>34%</div>
+                <div style={{...cssStyle.greenText,textAlign:'right'}}>06:00 - 12:00</div>
+                <div style={{...cssStyle.navyText,textAlign:'right'}}>34%</div>
             </Col>
         </Row>
         <Row style={{display:'flex', flexDirection:'row', justifyContent:'space-between', flexGrow:1}}>
             <Col>
-                <div style={cssStyle.redText}>12:00 - 6:00</div>
-                <div style={cssStyle.navyText}>25%</div>
+                <div style={{...cssStyle.redText,textAlign:'left'}}>12:00 - 6:00</div>
+                <div style={{...cssStyle.navyText,textAlign:'left'}}>25%</div>
             </Col>
             <Col>
-                <div style={cssStyle.yellow2Text}>18:00 - 24:00</div>
-                <div style={cssStyle.navyText}>27%</div>
+                <div style={{...cssStyle.yellow2Text,textAlign:'right'}}>18:00 - 24:00</div>
+                <div style={{...cssStyle.navyText,textAlign:'right'}}>27%</div>
             </Col>
         </Row>
     </Col>
