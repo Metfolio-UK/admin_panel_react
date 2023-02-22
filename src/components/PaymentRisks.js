@@ -23,6 +23,24 @@ const PaymentRisks = () => {
             padding:'24px 30px',
             
         },
+        Bottomcontainer : {
+            
+            top:'-55px',
+            display: 'flex',
+            flexDirection:'row',
+            height:'90px',
+            backgroundColor:'white',
+            fontFamily: 'Poppins',
+            fontSize: '17px',
+            fontWeight: '600',
+            lineHeight: '26px',
+            alignItems:'center',
+            letterSpacing: '0em',
+            color:blacky,
+            borderRadius:'12px',
+            padding:'24px 30px',
+            
+        },
         blackdot:{
             height:'6px',
             width:'6px',
@@ -39,7 +57,6 @@ const PaymentRisks = () => {
         whiteContainer:{
             display: 'flex',
             flexDirection:'column',
-            height:'316px',
             backgroundColor:'white',
             borderRadius:'12px',
             padding:'32px',
@@ -57,7 +74,7 @@ const PaymentRisks = () => {
         },
         navyText:{
             fontFamily: 'Poppins',
-            fontSize: '20px',
+            fontSize: '15px',
             fontWeight: '600',
             lineHeight: '30px',
             letterSpacing: '0em',
@@ -84,28 +101,25 @@ const PaymentRisks = () => {
         line:{
             padding:'0px 0px',
             height:'1px',
-            width:'373px',
+            width:'110%',
             opacity:'70%',
             backgroundColor:greyColor,
             marginTop:'30px'
         },
         colorDots:{
-            marginLeft:'64px',
-            marginTop:'19px',
             height:'11px',
             width:'11px',
             borderRadius:'20px',
+            marginRight:'10px'
 
         },
         fadedText1:{
             fontFamily: 'Poppins',
             fontSize: '14px',
             fontWeight: '500',
-            lineHeight: '26px',
+            lineHeight: '13px',
             letterSpacing: '-2%',
             color:greyColor,
-            marginTop:'11px',
-            marginLeft:'5px'
         },
 
       };
@@ -133,16 +147,21 @@ const PaymentRisks = () => {
                <div style={{...cssStyle.fadedText,fontSize:"16px",textAlign:"center",lineHeight:'26px',letterSpacing:'-2%'}}>There were 4 high risk orders in the last 24 hrs</div>
                <div style={{...cssStyle.blueButton,textAlign:'center'}}>   View Orders</div>
                <div style={cssStyle.line}></div>
-               <Row >
-               <div style={{...cssStyle.colorDots,backgroundColor:cyanColor,marginLeft:'-5px'}}></div>
-               <div style={cssStyle.fadedText1}>Low</div>
-               <div style={{...cssStyle.colorDots,backgroundColor:yellowColor}}></div>
-               <div style={cssStyle.fadedText1}>Medium</div>
-               <div style={{...cssStyle.colorDots,backgroundColor:sidebarColor}}></div>
-               <div style={cssStyle.fadedText1}>High</div>
-               </Row>
+               
                
 
+        </Col>
+        <Col style={cssStyle.Bottomcontainer}>
+        <Row style={{flexGrow:'1',justifyContent:'space-evenly'}}>
+                <Row><div style={{...cssStyle.colorDots,backgroundColor:cyanColor}}></div>
+               <div style={cssStyle.fadedText1}>Low</div></Row>
+               
+               <Row><div style={{...cssStyle.colorDots,backgroundColor:yellowColor}}></div>
+               <div style={cssStyle.fadedText1}>Medium</div></Row>
+               <Row><div style={{...cssStyle.colorDots,backgroundColor:sidebarColor}}></div>
+               <div style={cssStyle.fadedText1}>High</div></Row>
+               
+      </Row>
         </Col>
         </Col>
       )
