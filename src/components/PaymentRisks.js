@@ -1,6 +1,6 @@
 import { Row,Col } from 'antd'
 import React from 'react'
-import { blacky, cyanColor, greyColor, navyColor, sidebarColor, yellowColor } from '../const';
+import { blacky, cyanColor, dashColor, greyColor, navyColor, sidebarColor, yellowColor } from '../const';
 
 import DonutChart2 from './DonutChart2';
 
@@ -22,6 +22,7 @@ const PaymentRisks = () => {
         },
         
         middleContainer:{
+            padding:'0px 12px',
             display: 'flex',
             flexDirection:'column',
             height:'261px',
@@ -29,7 +30,6 @@ const PaymentRisks = () => {
             alignItems:"center"
         },
         bottomContainer : {
-            
             display: 'flex',
             flexDirection:'row',
             height:'80px',
@@ -40,8 +40,8 @@ const PaymentRisks = () => {
             lineHeight: '26px',
             alignItems:'center',
             letterSpacing: '0em',
-            color:blacky,
-            borderTop: '1px solid #B5B5C3',
+            color:dashColor,
+            borderTop: '1px solid #E4E6EF',
             borderRadius:'0 0 12px 12px',
             marginBottom: '20px'
             
@@ -70,7 +70,7 @@ const PaymentRisks = () => {
         },
         navyText:{
             fontFamily: 'Poppins',
-            fontSize: '15px',
+            fontSize: '16px',
             fontWeight: '600',
             lineHeight: '30px',
             letterSpacing: '0em',

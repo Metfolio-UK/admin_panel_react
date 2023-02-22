@@ -1,9 +1,9 @@
 import { Row,Col } from 'antd'
 import React from 'react'
-import { blacky, cyanColor, greyColor, navyColor, sidebarColor, yellowColor } from '../const';
+import { blacky, cyanColor, dashColor, greyColor, navyColor, sidebarColor, yellowColor } from '../const';
 import DonutChart from './DonutChart';
 
-const Order = () => {
+const OrderChart = () => {
     const cssStyle = {
         topContainer : {
             display: 'flex',
@@ -21,6 +21,7 @@ const Order = () => {
         },
         middleContainer:{
             display: 'flex',
+            padding:'0px 12px',
             flexDirection:'column',
             height:'261px',
             backgroundColor:'white',
@@ -38,8 +39,8 @@ const Order = () => {
             lineHeight: '26px',
             alignItems:'center',
             letterSpacing: '0em',
-            color:blacky,
-            borderTop: '1px solid #B5B5C3',
+            color:dashColor,
+            borderTop: '1px solid #E4E6EF',
             borderRadius:'0 0 12px 12px',
             marginBottom: '20px'
             
@@ -69,7 +70,7 @@ const Order = () => {
         },
         navyText:{
             fontFamily: 'Poppins',
-            fontSize: '15px',
+            fontSize: '16px',
             fontWeight: '600',
             lineHeight: '30px',
             letterSpacing: '0em',
@@ -131,7 +132,7 @@ const Order = () => {
         <Col style={cssStyle.middleContainer}>
                <div style={{}}><DonutChart/></div>
                <div style={{...cssStyle.fadedText,marginTop:'-152px'}}>Total</div>
-               <div style={{...cssStyle.navyText,fontWeight:'700'}}>£5234.56</div>
+               <div style={{...cssStyle.navyText,fontWeight:'700'}}>£52349.56</div>
                <div style={{...cssStyle.fadedText,fontSize:"16px",textAlign:"center",lineHeight:'26px',letterSpacing:'-2%',paddingBottom:'30px'}}>In the last 24 hrs, 75% of orders were buy orders</div>
                <div style={{...cssStyle.blueButton,textAlign:'center'}}>   View All Orders</div>
                
@@ -154,4 +155,4 @@ const Order = () => {
       )
     }
     
-    export default Order
+    export default OrderChart

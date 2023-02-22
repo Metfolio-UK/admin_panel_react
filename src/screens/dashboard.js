@@ -41,7 +41,7 @@ const Dashboard = (props) => {
                 <Col style={{ paddingRight:props.width<992?null :'20px'  }} xs={24} sm={24} md={24} lg={12}>
                 <Order/>
                 </Col>
-                <Col style={{ paddingTop: props.width<992?'20px':null, paddingRight:props.width<1200?null :'20px'  }}  xs={24} sm={24} md={24} lg={12}>
+                <Col style={{  paddingRight:props.width<1200?null :'20px'  }}  xs={24} sm={24} md={24} lg={12}>
                 <PaymentRisks/>
                 </Col>
                 
