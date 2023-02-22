@@ -1,33 +1,36 @@
 import { Row,Col } from 'antd'
 import React from 'react'
-import styled from 'styled-components';
-import { blacky, cyanColor, getNameInitals, greyColor, nameSymbolColor, navyColor, paginationColor, sidebarColor, tealColor, yellowColor } from '../const';
+import { blacky, cyanColor, greyColor, navyColor, sidebarColor, yellowColor } from '../const';
 import DonutChart from './DonutChart';
 
 const Order = () => {
     const cssStyle = {
-        container : {
+        topContainer : {
             display: 'flex',
             flexDirection:'column',
-            height:'120px',
+            height:'90px',
             backgroundColor:'white',
             fontFamily: 'Poppins',
             fontSize: '18px',
             fontWeight: '600',
             lineHeight: '21px',
-            
             letterSpacing: '0em',
             color:blacky,
-            borderRadius:'12px',
-            padding:'24px 30px',
+            borderRadius:'12px 12px 0 0',
             
         },
-        Bottomcontainer : {
+        middleContainer:{
+            display: 'flex',
+            flexDirection:'column',
+            height:'261px',
+            backgroundColor:'white',
+            alignItems:"center"
+        },
+        bottomContainer : {
             
-            top:'-45px',
             display: 'flex',
             flexDirection:'row',
-            height:'90px',
+            height:'80px',
             backgroundColor:'white',
             fontFamily: 'Poppins',
             fontSize: '17px',
@@ -36,32 +39,25 @@ const Order = () => {
             alignItems:'center',
             letterSpacing: '0em',
             color:blacky,
-            padding:'24px 30px',
-            borderTop: '1px solid #B5B5C3'
+            borderTop: '1px solid #B5B5C3',
+            borderRadius:'0 0 12px 12px',
+            marginBottom: '20px'
             
         },
-        blackdot:{
+        blackDot:{
             height:'6px',
             width:'6px',
             backgroundColor:'black',
             borderRadius:'2px',
         },
-        blackdotfaded:{
+        blackDot2:{
             height:'6px',
             width:'6px',
             backgroundColor:'black',
             borderRadius:'2px',
             marginRight:'4px',
         },
-        whiteContainer:{
-            display: 'flex',
-            flexDirection:'column',
-            backgroundColor:'white',
-            borderRadius:'12px',
-            padding:'32px',
-            top:'-35px',
-            alignItems:"center"
-        },
+        
         fadedText:{
             fontFamily: 'Poppins',
             fontSize: '12px',
@@ -86,7 +82,6 @@ const Order = () => {
             alignItems:'center',
             padding:'20px 12px',
             height:'42px',
-            width:'143px',
             backgroundColor:sidebarColor,
             borderRadius:'9px',
             fontFamily: 'Poppins',
@@ -95,7 +90,6 @@ const Order = () => {
             lineHeight: '17.58px',
             letterSpacing: '0.02em',
             color:'white',
-            marginTop:'17px',
         },
         
         colorDots:{
@@ -110,7 +104,6 @@ const Order = () => {
             fontSize: '14px',
             fontWeight: '500',
             lineHeight: '13px',
-            letterSpacing: '-2%',
             color:greyColor,
         },
 
@@ -118,33 +111,34 @@ const Order = () => {
     
       return (
     
-        <Col style={{position:'relative'}}>
+        <Col>
             
-        <Col style={cssStyle.container}>
-            <Row style={{justifyContent:'space-between'}}><div style={{marginTop:'4px',fontFamily: 'Poppins',fontSize: '18px',fontWeight: '600',lineHeight: '21px',}}>Orders (last 24hrs)</div>
-            <Row style={{marginTop:'12px'}}>
-            <div style={cssStyle.blackdotfaded}></div>
-            <div style={cssStyle.blackdot}></div>
+        <Col style={cssStyle.topContainer}>
+            <Row style={{justifyContent:'space-between'}}>
+            <div style={{marginLeft:'30px',marginTop:'30px',fontFamily: 'Poppins',fontSize: '18px',fontWeight: '600',lineHeight: '21px',}}>Orders (last 24hrs)</div>
+            <Row style={{marginTop:'40px',marginRight:'30px'}}>
+            <div style={cssStyle.blackDot2}></div>
+            <div style={cssStyle.blackDot}></div>
             </Row>
             </Row>
-            <div style={{...cssStyle.fadedText,marginTop:'4px',lineHeight:'21px'}}>Order Distribution Last 24hrs</div>
+            <div style={{...cssStyle.fadedText,marginLeft:'30px',marginTop:'4px',lineHeight:'21px'}}>Order Distribution Last 24hrs</div>
             
 
             
             
         
         </Col>
-        <Col style={cssStyle.whiteContainer}>
-               <div style={{marginTop:'-50px'}}><DonutChart/></div>
+        <Col style={cssStyle.middleContainer}>
+               <div style={{}}><DonutChart/></div>
                <div style={{...cssStyle.fadedText,marginTop:'-152px'}}>Total</div>
                <div style={{...cssStyle.navyText,fontWeight:'700'}}>£5234.56</div>
-               <div style={{...cssStyle.fadedText,fontSize:"16px",textAlign:"center",lineHeight:'26px',letterSpacing:'-2%'}}>In the last 24 hrs, 75% of orders were buy orders</div>
+               <div style={{...cssStyle.fadedText,fontSize:"16px",textAlign:"center",lineHeight:'26px',letterSpacing:'-2%',paddingBottom:'30px'}}>In the last 24 hrs, 75% of orders were buy orders</div>
                <div style={{...cssStyle.blueButton,textAlign:'center'}}>   View All Orders</div>
                
                
 
         </Col>
-        <Col style={cssStyle.Bottomcontainer}>
+        <Col style={cssStyle.bottomContainer}>
         <Row style={{flexGrow:'1',justifyContent:'space-evenly'}}>
                 <Row><div style={{...cssStyle.colorDots,backgroundColor:cyanColor}}></div>
                <div style={cssStyle.fadedText1}>Sell</div></Row>
