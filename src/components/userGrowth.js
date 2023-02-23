@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useEffect, useRef} from 'react';
+import { Row,Col } from 'antd'
+
 import ApexCharts, {ApexOptions} from 'apexcharts';
 import {getCSS, getCSSVariableValue} from '../_metronic/assets/ts/_utils/DomHelpers.ts';
 import {useThemeMode} from '../_metronic/partials/layout/theme-mode/ThemeModeProvider.tsx';
-import { greyColor,blacky, tealColor, navyColor, gray2Color } from '../const';
+import { greyColor,cyanColor, tealColor, yellowColor, gray2Color, sidebarColor } from '../const';
 
-const ChartsWidget1 = () => {
+const UserGrowth = () => {
   var loading = true;
     const cssStyle = {
         unselectedtypeChart:{
@@ -15,6 +17,14 @@ const ChartsWidget1 = () => {
           lineHeight: '18px',
           letterSpacing: '0em',
           color:greyColor,
+        },
+        fadedText1:{
+            fontFamily: 'Poppins',
+            fontSize: '14px',
+            fontWeight: '500',
+            lineHeight: '26px',
+            letterSpacing:'-2%',
+            color:greyColor,
         },
         selectedtypeChart:{
           fontFamily: 'Poppins',
@@ -41,6 +51,23 @@ const ChartsWidget1 = () => {
           lineHeight: '21px',
           letterSpacing: '0em',
           textAlign: 'left',
+        },
+        colorDots:{
+            height:'8px',
+            width:'8px',
+            borderRadius:'20px',
+            marginRight:'5px',
+            marginLeft:'10px',
+            marginTop:'8px'
+
+        },
+        colorDots1:{
+            height:'8px',
+            width:'8px',
+            borderRadius:'20px',
+            marginRight:'5px',
+            marginTop:'8px'
+
         },
         ov:{
           fontFamily: 'Poppins',
@@ -81,13 +108,21 @@ const ChartsWidget1 = () => {
   }, [chartRef]);
 
   return (
-    <div className={`card ` }>
+    <div className={`card ` }style={{marginBottom:'30px'}}>
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bold fs-3 mb-1' style={cssStyle.ov}>Overview</span>
+          <span className='card-label fw-bold fs-3 mb-1' style={cssStyle.ov}>User Growth (%)</span>
 
-          <span className='text-muted fw-semibold fs-7' style={cssStyle.ratio}>Buy:Sell Ratio (%)</span>
+          <span>
+        <Row style={{flexGrow:'1',justifyContent:'space-evenly'}}>
+                <Row><div style={{...cssStyle.colorDots1,backgroundColor:cyanColor}}></div>
+               <div style={cssStyle.fadedText1}>Android</div></Row>
+               
+               <Row><div style={{...cssStyle.colorDots,backgroundColor:yellowColor}}></div>
+               <div style={cssStyle.fadedText1}>IOS</div></Row>
+               
+      </Row></span>
         </h3>
 
         {/* begin::Toolbar */}
@@ -131,7 +166,7 @@ const ChartsWidget1 = () => {
   );
 };
 
-export {ChartsWidget1};
+export {UserGrowth};
 
 function getChartOptions(height) {
   const labelColor = getCSSVariableValue('--bs-gray-500');
