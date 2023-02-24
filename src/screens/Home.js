@@ -28,7 +28,8 @@ const Home = (props) => {
       {isMobile(props.width) && <SidebarDrawer open={open} onClose={onClose}/>}
       <Routes>
         <Route exact path='/' element={<Dashboard width={props.width} showDrawer={showDrawer}/>} />
-        <Route exact path='/orders' element={<Users width={props.width} showDrawer={showDrawer}/>} />
+        <Route exact path='/orders' element={<Orders width={props.width} showDrawer={showDrawer}/>} />
+        <Route exact path='/users' element={<Users width={props.width} showDrawer={showDrawer}/>} />
       </Routes>
     </Layout>
   );
