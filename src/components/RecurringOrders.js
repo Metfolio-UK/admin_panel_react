@@ -5,7 +5,7 @@ import { Pagination } from 'antd';
 import styled from 'styled-components';
 
 
-const RecurringOrders = ({className}) => {
+const RecurringOrders = ({className, tabledata}) => {
     const Page = styled(Pagination)`
         & .anticon {
             color: ${yellowColor};
@@ -29,56 +29,7 @@ const RecurringOrders = ({className}) => {
             border-color:${yellowColor};
         }
     `;
-    const data = [
-        {
-            name:'Meeren Raniga',
-            device:'Android',
-            value:'£250.00',
-            value_type:'Fixed Fee: £450.00',
-            quantity:'34.544 g',
-            quantity_type:'PG Account',
-            method:'Apple pay',
-            method_type:'High Risk',
-            order_type: 'Recurring Buy',
-            order_acc: 'Daily'
-        },
-        {
-            name:'Shyam Vikram',
-            device:'Android',
-            value:'$23,000,000',
-            value_type:'Fixed Fee: £250.00',
-            quantity:'42.343 g',
-            quantity_type:'PG Account',
-            method:'Card',
-            method_type:'Low Risk',
-            order_type: 'Recurring Buy',
-            order_acc: '17th of every Month'
-        },
-        {
-            name:'Priyen Raniga',
-            device:'IOS',
-            value:'$540.00',
-            value_type:'Fixed Fee: £74.00',
-            quantity:'10.456 g',
-            quantity_type:'PG Account',
-            method:'Card',
-            method_type:'Low Risk',
-            order_type: 'Recurring Buy',
-            order_acc: 'Weekly on Sunday'
-        },
-        {
-            name:'Abhishek Chakram',
-            device:'IOS',
-            value:'$5000.00',
-            value_type:'Fixed Fee: £55.00',
-            quantity:'100.000 g',
-            quantity_type:'PG Account',
-            method:'Barclays',
-            method_type:'Medium Risk',
-            order_type: 'Recurring Buy',
-            order_acc: 'Weekly on Sunday'
-        }
-    ];
+    const data = tabledata;
     const cssStyle = {
         greyColor:{
             color:greyColor,

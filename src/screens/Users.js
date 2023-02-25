@@ -3,17 +3,10 @@ import React from 'react';
 import { Row,Col } from 'antd'
 import {isMobile} from '../const';
 import Navbar from '../components/navbar';
-import SellOrders from '../components/sellOrders';
-import BuyOrders from '../components/BuyOrders';
-import RecurringOrders from '../components/RecurringOrders';
-import { ChartsWidget1 } from '../components/Chart';
-import { InvReport } from '../components/InventoryReport';
-import AdminHolding from '../components/AdminHoldings';
-import CustomerHolding from '../components/CustomerHoldings';
 import {UserGrowth} from '../components/userGrowth'
 import UsersTable from '../components/UsersTable';
 import UserBaseChart2 from '../components/userbasechart2';
-import UserBaseChart from '../components/userBaseChart';
+import { UserTableData } from '../helpers/dummydata';
 const { Content, Footer } = Layout;
 const Orders = (props) => {
   return (
@@ -41,7 +34,7 @@ const Orders = (props) => {
         <div style={{height: props.width>992 ? null :'30px'}}/>
           
         
-        <UsersTable className='mb-5 mb-xl-8'/>
+        <UsersTable tableData={ UserTableData } className='mb-5 mb-xl-8'/>
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }} >

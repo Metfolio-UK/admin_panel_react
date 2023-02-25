@@ -5,7 +5,7 @@ import { Pagination } from 'antd';
 import styled from 'styled-components';
 
 
-const UsersTable = ({className}) => {
+const UsersTable = ({className, tableData}) => {
     const Page = styled(Pagination)`
         & .anticon {
             color: ${yellowColor};
@@ -29,48 +29,7 @@ const UsersTable = ({className}) => {
             border-color:${yellowColor};
         }
     `;
-    const data = [
-        {
-            name:'Meeren Raniga',
-            device:'Android',
-            status:'Not Verified',
-            dob:'24/04/1997',
-            Signedup:'Google',
-            account:'priyen@gmail.com',
-            createdon:'17/02/23',
-            time:'23:00:00'
-        },
-        {
-            name:'Shyam Vikram',
-            device:'Android',
-            status:'In Process',
-            dob:'24/04/1996',
-            Signedup:'Apple',
-            account:'priyen@icloud.com',
-            createdon:'17/02/23',
-            time:'23:00:00'
-        },
-        {
-            name:'Priyen Raniga',
-            device:'IOS',
-            status:'Verified',
-            dob:'23/05/1999',
-            Signedup:'Mobile no.',
-            account:'(+44)7766140808',
-            createdon:'17/02/23',
-            time:'23:00:00'
-        },
-        {
-            name:'Abhishek Chakram',
-            device:'IOS',
-            status:'Not Verified',
-            dob:'23/05/2000',
-            Signedup:'Apple',
-            account:'Abhiskek@icloud.com',
-            createdon:'17/02/23',
-            time:'23:00:00'
-        }
-    ];
+    const data = tableData;
     const cssStyle = {
         greyColor:{
             color:greyColor,

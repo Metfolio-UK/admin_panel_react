@@ -3,11 +3,6 @@ import React from 'react';
 import { Row,Col } from 'antd'
 import {isMobile} from '../const';
 import Navbar from '../components/navbar';
-import SellOrders from '../components/sellOrders';
-import BuyOrders from '../components/BuyOrders';
-import RecurringOrders from '../components/RecurringOrders';
-import { ChartsWidget1 } from '../components/Chart';
-import { InvReport } from '../components/InventoryReport';
 import AdminHolding from '../components/AdminHoldings';
 import CustomerHolding from '../components/CustomerHoldings';
 import UserBaseChart from '../components/userBaseChart';

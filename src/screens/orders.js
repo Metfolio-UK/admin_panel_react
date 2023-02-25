@@ -10,6 +10,7 @@ import { ChartsWidget1 } from '../components/Chart';
 import { InvReport } from '../components/InventoryReport';
 import AdminHolding from '../components/AdminHoldings';
 import CustomerHolding from '../components/CustomerHoldings';
+import { BuyTableData, RecurringTableData, SellOrdersData } from '../helpers/dummydata';
 const { Content, Footer } = Layout;
 const Orders = (props) => {
   return (
@@ -38,9 +39,9 @@ const Orders = (props) => {
           
         
         
-        <BuyOrders className='mb-5 mb-xl-8'/>
-        <RecurringOrders className='mb-5 mb-xl-8'/>
-        <SellOrders className='mb-5 mb-xl-8'/>
+        <BuyOrders tabledata={ BuyTableData } className='mb-5 mb-xl-8'/>
+        <RecurringOrders tabledata={ RecurringTableData } className='mb-5 mb-xl-8'/>
+        <SellOrders tableData={ SellOrdersData  } className='mb-5 mb-xl-8'/>
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }} >

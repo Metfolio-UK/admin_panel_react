@@ -44,9 +44,9 @@ const Navbar = (props) => {
               }}>{props.heading}</div>
               </Row>
             </Col>
-{ !isMobile(props.width) &&
+{/* { !isMobile(props.width) &&
             <Input style={{width:'240px', borderRadius:'12px', height:'40px', border:'1px solid black' }} size="large" placeholder="Search Metfolio"  prefix={<SearchOutlined style={{color:yellowColor, fontSize:'28px'}}  />} />
-}            
+}             */}
             { !isMobile(props.width) && <Row>
               <div style={{
                 height:'40px',
@@ -92,7 +92,7 @@ const Navbar = (props) => {
               </div>
             }
           </Row>
-          { isMobile(props.width) &&
+          {/* { isMobile(props.width) &&
           <div style={{
             padding:'0px 30px 12px 30px',
             backgroundColor:'white',
@@ -100,7 +100,7 @@ const Navbar = (props) => {
             <Input style={{ borderRadius:'12px', height:'40px' , border:'1px solid black' }} size="large" placeholder="Search Metfolio"  prefix={<SearchOutlined style={{color:yellowColor, fontSize:'28px'}}  />} />
 
           </div>
-}   
+}    */}
     </div>
   )
 }

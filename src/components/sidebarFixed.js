@@ -138,6 +138,7 @@ const SidebarFixed = (props) => {
           <UserOutlined style={{
             fontSize:'24px',
             fontWeight:'500',
+            color:'white',
           }}/>
           <div style={{
             fontFamily:'Poppins',
