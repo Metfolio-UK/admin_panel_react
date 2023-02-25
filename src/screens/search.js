@@ -95,6 +95,7 @@ const Search = (props) => {
       <Input onChange={(e)=>{
         console.log(e.target.value);
         setSearchParameter(e.target.value);
+
       }} style={{borderRadius:'12px', height:'40px', border:'1px solid black' }} size="large" placeholder="Search Metfolio"  suffix={<SearchOutlined onClick={searchDataInTables} style={{color:yellowColor, fontSize:'28px'}}  />} />
       <div style={{height:'20px'}}/>
         <BuyOrders tabledata={ buyData} className='mb-5 mb-xl-8'/>
