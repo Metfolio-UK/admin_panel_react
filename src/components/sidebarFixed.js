@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
-import { AppstoreOutlined,HomeOutlined,UserOutlined } from '@ant-design/icons';
+import { AppstoreOutlined,HomeOutlined,UserOutlined,SearchOutlined } from '@ant-design/icons';
 import { Col,Layout } from 'antd';
-import {sidebarColor,greyColor, menuSelectedColor  } from '../const';
+import {sidebarColor,greyColor, menuSelectedColor, isMobile  } from '../const';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import {  Drawer } from 'antd';
 const { Sider } = Layout;
 
-const SidebarFixed = (props) => {
-   
 
+const SidebarFixed = (props) => {
   const [tapped_orders, setTappedOrders] = useState(false);
   const [tapped_home, setTappedHome] = useState(true);
   const [tapped_user, setTappedUser] = useState(false);
+  const [tapped_search, setTappedSearch] = useState(false);
+
 
   const HomeContainer = styled.div`
   width:100px;
@@ -60,7 +62,127 @@ const SidebarFixed = (props) => {
   }
   `;
 
+  const SearchContainer = styled.div`
+  width:100px;
+  height: 80px;
+  border-radius:12px;
+  align-items:center;
+  background-color: ${tapped_search?menuSelectedColor:null};
+  display:flex;
+  flex-direction:column;
+  margin-bottom:16px;
+  justify-content:center;
+  color: ${tapped_search?"white": greyColor};
+  &:hover{
+      color:white;
+  }
+  `;
+
+
   return (
+    ( isMobile(props.width) ? <Drawer closable={false} width={120} style={{backgroundColor:sidebarColor}} bodyStyle={{ padding:'0px',display:'flex', alignItems:'center', flexDirection:'column' }}
+    placement="left" onClose={()=>props.onClose()} open={props.open}>
+        <div style={{marginTop:'30px', marginBottom:'20px'}}>
+        <img alt='logo' src='images/logo.png' width={85}/>
+
+        </div>
+       
+        <Col style={{
+          display:'flex',
+          justifyContent:'center',
+          flexDirection:'column',
+          alignItems:'center'
+        }}>
+        
+        <Link to="/">
+        <a>
+        <HomeContainer onClick={()=>{
+            setTappedHome(true);
+            setTappedOrders(false);
+            setTappedUser(false);
+            setTappedSearch(false);
+            props.onClose();
+        }} >
+          <HomeOutlined style={{
+            fontSize:'24px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Home</div>
+        </HomeContainer>
+        </a></Link>
+        <Link to='/orders'>
+          <a>
+          <OrderContainer onClick={()=>{
+            setTappedHome(false);
+            setTappedOrders(true);
+            setTappedUser(false);
+            setTappedSearch(false);
+            props.onClose();
+        }} >
+          <AppstoreOutlined style={{
+            fontSize:'24px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Orders</div>
+        </OrderContainer>
+          </a>
+        </Link>
+        <Link to='/users'>
+          <a>
+          <UserContainer onClick={()=>{
+            setTappedHome(false);
+            setTappedOrders(false);
+            setTappedSearch(false);
+            setTappedUser(true);
+            props.onClose();
+        }} >
+          <UserOutlined style={{
+            fontSize:'24px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Users</div>
+        </UserContainer>
+          </a>
+        </Link>
+        <Link to='/search'>
+          <a>
+          <SearchContainer onClick={()=>{
+            setTappedHome(false);
+            setTappedOrders(false);
+            setTappedUser(false);
+            setTappedSearch(true);
+            props.onClose();
+        }} >
+          <SearchOutlined style={{
+            fontSize:'24px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Search</div>
+        </SearchContainer>
+          </a>
+        </Link>
+        </Col>
+      </Drawer>:
     <Sider
       width={150}
       breakpoint='md'
@@ -95,7 +217,7 @@ const SidebarFixed = (props) => {
         <a>
         <HomeContainer onClick={()=>{
             setTappedHome(true);
-            setTappedOrders(false);setTappedUser(false);
+            setTappedOrders(false);setTappedUser(false);setTappedSearch(false);
         }} >
           <HomeOutlined style={{
             fontSize:'24px',
@@ -113,7 +235,7 @@ const SidebarFixed = (props) => {
           <a>
           <OrderContainer onClick={()=>{
             setTappedHome(false);
-            setTappedOrders(true);setTappedUser(false);
+            setTappedOrders(true);setTappedUser(false);setTappedSearch(false);
         }} >
           <AppstoreOutlined style={{
             fontSize:'24px',
@@ -133,23 +255,44 @@ const SidebarFixed = (props) => {
           <UserContainer onClick={()=>{
             setTappedHome(false);
             setTappedOrders(false);
-            setTappedUser(true);
+            setTappedUser(true);setTappedSearch(false);
+          }} >
+            <UserOutlined style={{
+              fontSize:'24px',
+              fontWeight:'500',
+              color:'white',
+            }}/>
+            <div style={{
+              fontFamily:'Poppins',
+              fontSize:'14px',
+              fontWeight:'500',
+            }}>Users</div>
+          </UserContainer>
+        </a>
+        </Link>
+        <Link to='/search'>
+          <a>
+          <SearchContainer onClick={()=>{
+            setTappedHome(false);
+            setTappedOrders(false);
+            setTappedUser(false);
+            setTappedSearch(true);
         }} >
-          <UserOutlined style={{
+          <SearchOutlined style={{
             fontSize:'24px',
             fontWeight:'500',
-            color:'white',
+            
           }}/>
           <div style={{
             fontFamily:'Poppins',
             fontSize:'14px',
             fontWeight:'500',
-          }}>Users</div>
-        </UserContainer>
+          }}>Search</div>
+        </SearchContainer>
           </a>
         </Link>
         </Col>
-      </Sider>
+      </Sider>)
   )
 }
 

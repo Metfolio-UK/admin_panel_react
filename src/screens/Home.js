@@ -14,7 +14,7 @@ import Search from './search';
 
 const Home = (props) => {
   const [open, setOpen] = useState(false);
-  const [menu, setMenu] = useState(0);
+
 
 
   const showDrawer = () => {
@@ -25,14 +25,11 @@ const Home = (props) => {
     setOpen(false);
   };
 
-  const changeMenu = (clicked_menu) => {
-    setMenu(clicked_menu);
-  };
+
 
   return (
     <Layout hasSider>
-      <SidebarFixed menu={menu} changeMenu={changeMenu}/>
-      {isMobile(props.width) && <SidebarDrawer open={open} onClose={onClose} menu={menu} changeMenu={changeMenu}/>}
+      <SidebarFixed width={props.width} open={open} onClose={onClose}/>
       <Routes>
         <Route exact path='/' element={<Dashboard width={props.width} showDrawer={showDrawer}/>} />
         <Route exact path='/orders' element={<Orders width={props.width} showDrawer={showDrawer}/>} />

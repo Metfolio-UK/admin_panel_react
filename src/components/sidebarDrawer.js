@@ -137,7 +137,7 @@ const SidebarDrawer = (props) => {
           </a>
         </Link>
         </Col>
-      </Drawer>
+    </Drawer>
   )
 }
 

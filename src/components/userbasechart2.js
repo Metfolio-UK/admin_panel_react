@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useEffect, useRef} from 'react'
 import ApexCharts from 'apexcharts'
-import {getCSS, getCSSVariableValue} from '../_metronic/assets/ts/_utils/DomHelpers.ts';
-import { getNameInitals, greyColor, nameSymbolColor, navyColor, paginationColor, tealColor, userbasechartColor, yellowColor } from '../const';
+import { greyColor, navyColor,userbasechartColor, yellowColor } from '../const';
 import { Row,Col } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons';
 
