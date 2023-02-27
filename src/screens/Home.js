@@ -8,7 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from './dashboard';
 import Users from './Users';
 import Search from './search';
-import { AuthPage } from '../components/AuthPage';
+import {Login } from '../components/Login';
 
 
 
@@ -29,7 +29,7 @@ const Home = (props) => {
 
 
   return (
-    <AuthPage/>
+    <Login/>
     
   );};{/*
     <Layout hasSider>
