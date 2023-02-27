@@ -3,6 +3,7 @@ import React from 'react'
 import { getNameInitals, greyColor, nameSymbolColor, paginationColor, tealColor, yellowColor } from '../const';
 import { Pagination } from 'antd';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 const UsersTable = ({className, tableData}) => {
@@ -174,12 +175,14 @@ const UsersTable = ({className, tableData}) => {
                 </td>
               
                 <td className='text-end'>
+                  <Link to='/currentUser'>
                   <a
                     className='btn'
                   >
                     <div className='btn' style={cssStyle.yellowButton}>View User</div>
 
                   </a>
+                  </Link>
                  
                 </td>
               </tr>)

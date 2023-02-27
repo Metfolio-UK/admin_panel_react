@@ -10,6 +10,7 @@ import Users from './Users';
 import Search from './search';
 import {Login } from '../components/Login';
 import Layoutdefiner from '../components/layoutdefiner';
+import CurrentUser from './currentUser';
 
 
 
@@ -45,9 +46,10 @@ const Home = (props) => {
       <Route exact path='/search' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
         <Search width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      {/* <Route exact path='/orders' element={<Orders width={props.width} showDrawer={showDrawer}/>} />
-      <Route exact path='/users' element={<Users width={props.width} showDrawer={showDrawer}/>} />
-      <Route exact path='/search' element={<Search width={props.width} showDrawer={showDrawer}/>} /> */}
+
+      <Route exact path='/currentUser' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
+        <CurrentUser width={props.width} showDrawer={showDrawer}/>
+      }/>} />
     </Routes>
 
     

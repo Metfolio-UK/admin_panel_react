@@ -16,7 +16,7 @@ export const red2Color = "#F64E60";
 export const yellow3Color = "#FFC700";
 export const cyanColor = "#4FC9DA";
 export const greyButtonColor = "#F9F9F9";
-
+export const lightGreenColor = "#ECFEF4";
 export const userbasechartColor='#2F3044';
 export const seeall='#4FC9DA';
 export const sellOrderChartColor='#6AA2DE';
