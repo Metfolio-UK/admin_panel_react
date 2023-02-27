@@ -94,7 +94,7 @@ const SidebarFixed = (props) => {
           alignItems:'center'
         }}>
         
-        <Link to="/">
+        <Link to="/dashboard">
         <a>
         <HomeContainer onClick={()=>{
             setTappedHome(true);
@@ -213,7 +213,7 @@ const SidebarFixed = (props) => {
           alignItems:'center'
         }}>
         
-        <Link to="/">
+        <Link to="/dashboard">
         <a>
         <HomeContainer onClick={()=>{
             setTappedHome(true);
@@ -260,7 +260,6 @@ const SidebarFixed = (props) => {
             <UserOutlined style={{
               fontSize:'24px',
               fontWeight:'500',
-              color:'white',
             }}/>
             <div style={{
               fontFamily:'Poppins',

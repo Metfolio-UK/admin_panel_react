@@ -1,54 +1,79 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { toAbsoluteUrl } from '../_metronic/helpers/AssetHelpers.ts';
-import { Col } from 'antd';
+import { Col, Row } from 'antd';
+import { gray2Color, greenColor,greyButtonColor,greyColor,isMobile,navyColor, sidebarColor } from '../const';
+import { Link } from 'react-router-dom';
+const Login = (props) => {
 
-const Login = () => {
+  const cssStyle = {
+    container:{
+      height:'100vh',
+      display:'flex',
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor:sidebarColor,
+    },
+    microsoftContainer:{
+      display:'flex',
+      flexDirection:'row',
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor: greyButtonColor,
+      padding:'8px 32px',
+      flexGrow:'1',
+      borderRadius:'8px',
+      boxShadow: '0 2px 8px 0 rgba(0,0,0,0.1)'
+    },
+    card: {
+      display:'inline',
+      flexDirection:'column',
+      marginTop:'48px',
+      padding: isMobile(props.width)? '50px 16px' :"60px 16px",
+      width:isMobile(props.width)? '300px' : "600px",
+      borderRadius:'12px',
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor:'white',
+      boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)'
+
+    },
+    navyText:{
+      fontFamily: 'Poppins',
+      fontSize: '20px',
+      fontWeight: '600',
+      lineHeight: '30px',
+      letterSpacing: '0em',
+      color:'black',
+      textAlign:'center'
+    },
+    normalText:{
+      fontFamily: 'Poppins',
+      fontSize: '14px',
+      fontWeight: '400',
+      lineHeight: '30px',
+      letterSpacing: '0em',
+      color:'black',
+    },
+  };
+
   return (
-    <Col style={{alignItems:'center'}}>
-    {/* begin::Content */}
-    <div className='d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20'>
-      {/* begin::Logo */}
-      <a href='#' className='mb-12'>
+    <Col style={cssStyle.container}>
+    <img alt='Logo' src='/images/logo.png' style={{width: isMobile(props.width)?'240px':'300px'}}/>
+    <Col style={cssStyle.card}>
+      <div style={cssStyle.navyText}>Sign In to Metfolio</div>
+      <div style={{height:'24px'}}/>
+      <Link to='/dashboard'>
+      <a>
+      <Row style={cssStyle.microsoftContainer}>
+        <img alt='microsoft' src='/images/Microsoft_logo.svg.png' style={{width:'20px', marginRight:'16px'}}/>
         
-        <img
-          alt='Logo'
-          src={toAbsoluteUrl('/images/logo_dark.png')}
-          className='theme-light-show h-45px'
-        ></img>
+        <div style={cssStyle.normalText}>Continue with Microsoft</div>
+      </Row>
       </a>
-      {/* end::Logo */}
-      {/* begin::Wrapper */}
-      <div className='w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto'>
-      <form
-    className='form w-100'
-    id='kt_login_signin_form'
-  >
-    {/* begin::Heading */}
-    <div className='text-center mb-10'>
-      <h1 className='text-dark mb-3'>Sign In to Metfolio</h1>
-      
-    </div>
-    {/* begin::Heading */}
+      </Link>
+    </Col>
 
-    
-
-      {/* begin::Google link */}
-      <a href='#' className='btn btn-flex flex-center btn-light btn-lg w-100'>
-        <img
-          alt='Logo'
-          src={toAbsoluteUrl('/images/Microsoft_logo.svg.png')}
-          className='h-20px me-3'
-        />
-        Continue with Microsoft
-      </a>
-      {/* end::Google link */}
-    
-    {/* end::Action */}
-  </form> 
-      </div>
-      {/* end::Wrapper */}
-    </div>
-    {/* end::Content */}
     </Col>
     
   );
