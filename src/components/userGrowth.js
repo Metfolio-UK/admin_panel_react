@@ -177,11 +177,11 @@ function getChartOptions(height) {
   return {
     series: [
       {
-        name: 'Net Profit',
+        name: 'IOS',
         data: [44, 55, 57, 56, 61, 58],
       },
       {
-        name: 'Revenue',
+        name: 'Android',
         data: [76, 85, 101, 98, 87, 105],
       },
     ],
