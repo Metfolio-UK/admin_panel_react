@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from './dashboard';
 import Users from './Users';
 import Search from './search';
+import {Login } from '../components/Login';
 
 
 
@@ -28,7 +29,11 @@ const Home = (props) => {
 
 
   return (
+    <Login/>
+    
+  );};{/*
     <Layout hasSider>
+    
       <SidebarFixed width={props.width} open={open} onClose={onClose}/>
       <Routes>
         <Route exact path='/' element={<Dashboard width={props.width} showDrawer={showDrawer}/>} />
@@ -36,7 +41,7 @@ const Home = (props) => {
         <Route exact path='/users' element={<Users width={props.width} showDrawer={showDrawer}/>} />
         <Route exact path='/search' element={<Search width={props.width} showDrawer={showDrawer}/>} />
       </Routes>
-    </Layout>
+  </Layout>
   );
-};
+};*/}
 export default Home;
