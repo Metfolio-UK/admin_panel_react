@@ -193,3 +193,13 @@ export const BuyTableData = [
         order_acc: 'PG Account'
     }
 ];
+
+export const ProfileDetails = [
+    {
+        fullname:'Meeren Raniga',
+        email:'priyen@gmail.com',
+        phone:'(+44)7766140808',
+        address:'71/A, Fear Street',
+        signupmethod:'Google'
+    }
+];

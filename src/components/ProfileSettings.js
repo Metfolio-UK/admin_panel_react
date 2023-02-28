@@ -1,26 +1,23 @@
-import {  Layout } from 'antd';
 import React,{useState} from 'react';
-import { Row,Col,Input } from 'antd'
+import { Input } from 'antd';
+import { Row,Col } from 'antd'
 import {blacky, cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, tealColor} from '../const';
-import Navbar from '../components/navbar';
 import { ProfileDetails } from '../helpers/dummydata';
-import { MyContainer } from '../components/Tabs';
 import { Tabs } from 'antd';
-import PaymentRisks from '../components/PaymentRisks';
-import Profile from '../components/profile';
-import ProfileSettings from '../components/ProfileSettings';
 const { TabPane } = Tabs;
-const { Content, Footer } = Layout;
-const CurrentUser = (props) => {
-  function handleTabChange(key) {
-    console.log(key); // You can handle tab change here
-  }
+const ProfileSettings = (props) => {
+    const [text, setText] = useState('Edit me!');
+
+  const handleInput = (event) => {
+    setText(event.target.innerText);
+  };
+
 
     const cssStyle = {
         container:{
           display:'flex',
           flexDirection:'row',
-          padding:'16px',
+          padding:'16px 16px 0 16px',
           borderRadius:'16px',
           backgroundColor:"white"
         },
@@ -159,52 +156,7 @@ const CurrentUser = (props) => {
       },
         dashedContainer:{ padding:'4px 8px', borderRadius:'12px', border:`1px dashed ${yellowColor}` },
       };
-  return (
-    <Layout
-    className="site-layout"
-    style={{  marginLeft: isMobile(props.width)?0: 150 }}>
-    <Content>
-      <Navbar heading="User Profile" width={props.width} showDrawer={props.showDrawer}/>
-      <div style={{height:'20px'}}/>
-      <div style={{ padding:'20px' }}>
-        <Row style={cssStyle.container}>
-            <Col><Col style={cssStyle.nameSymbol}>MR </Col>
-            </Col>
-            <Col style={{ marginTop: props.width<510?"16px":null,marginLeft:props.width<510?null:"20px"   }}>
-                <Row>
-                    <div style={cssStyle.navyText}>Meeren Rainga</div>
-                    <div style={cssStyle.verified}>Verified</div>
-                </Row>
-                <Row style={cssStyle.container2}>
-                    <div style={{...cssStyle.colordots, backgroundColor:cyanColor}}/>
-                    <div style={cssStyle.normalText}>Android</div>
-                </Row>
-                <Row style={{marginTop:'12px', display:'flex', flexDirection:'row', justifyContent:'space-between', flexGrow:1}}>
-                <Col style={cssStyle.dashedContainer}>
-                    <div style={cssStyle.navyText}>22.345 g</div>
-                    <div style={cssStyle.fadedText}>Physical Gold</div>
-                </Col>
-                <Col style={cssStyle.dashedContainer}>
-                    <div style={cssStyle.navyText}>22.345 g</div>
-                    <div style={cssStyle.fadedText}>Goal Account</div>
-                </Col>
-            </Row>
-            </Col>
-        </Row>
-        <Col>
-        <Row style={cssStyle.containerProfile}>
-          <Row style={{flexGrow:'1'}}><div>
-            <Tabs defaultActiveKey="1" onChange={handleTabChange} style={{width:'100%'}} >
-              <TabPane tab="Tab 1" key="1" >
-              <Profile/>
-              </TabPane>
-              <TabPane tab="Tab 2" key="2">
-              </TabPane>
-              </Tabs></div></Row>
-          
-          
-        </Row>
-        <Col>
+    return(<Col>
         <Row style={cssStyle.containerProfile}>
           <div style={cssStyle.titleProfile}>Profile Details</div>
           <div style={cssStyle.tealButton}> Edit User</div>
@@ -214,46 +166,7 @@ const CurrentUser = (props) => {
         <Col style={cssStyle.containerProfileBottom}>
           <Row>
           <Col style={{justifyContent:'space-evenly'}}>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Full Name</div>
-              <div style={{...cssStyle.formRight,marginLeft:props.width>767?"330px":'15px'}}>{ProfileDetails[0].fullname}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Email Address</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].email}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Contact Phone</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].phone}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Home Address</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].address}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-            <div style={{...cssStyle.formLeft}}>Signup Method</div>
-            <div style={{...cssStyle.formRight,marginBottom:'30px'}}>{ProfileDetails[0].signupmethod}</div>
-            </Row>
-          
-          </Col>
-          </Row>
-
-          
-
-        
-        </Col>
-        </Col>
-        <Col>
-        <Row style={cssStyle.containerProfile}>
-          <div style={cssStyle.titleProfile}>Profile Details</div>
-          <div style={cssStyle.tealButton}> Edit User</div>
-          
-        </Row>
-        
-        <Col style={cssStyle.containerProfileBottom}>
-          <Row>
-          <Col style={{justifyContent:'space-evenly'}}>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
+            <Row style={{flexDirection:props.width>200?"row":'column'}}>
               <div style={{...cssStyle.formLeft,color:blacky}}>Full Name</div>
               <Input style={cssStyle.fadedContainer} placeholder="Name" />
             
@@ -288,15 +201,8 @@ const CurrentUser = (props) => {
         
         </Col>
         </Col>
-      </Col>
         
-      </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }} >
-      Metfolio ©2023. All Rights Reserved.
-    </Footer>
-  </Layout>
-  )
-}
+)
+};
 
-export default CurrentUser
+export default ProfileSettings;

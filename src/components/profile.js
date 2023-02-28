@@ -1,26 +1,21 @@
 import {  Layout } from 'antd';
-import React,{useState} from 'react';
-import { Row,Col,Input } from 'antd'
+import { useState } from 'react';
+import React from 'react';
+import { Row,Col } from 'antd'
 import {blacky, cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, tealColor} from '../const';
 import Navbar from '../components/navbar';
 import { ProfileDetails } from '../helpers/dummydata';
 import { MyContainer } from '../components/Tabs';
 import { Tabs } from 'antd';
-import PaymentRisks from '../components/PaymentRisks';
-import Profile from '../components/profile';
-import ProfileSettings from '../components/ProfileSettings';
 const { TabPane } = Tabs;
 const { Content, Footer } = Layout;
-const CurrentUser = (props) => {
-  function handleTabChange(key) {
-    console.log(key); // You can handle tab change here
-  }
+const Profile = (props) => {
 
     const cssStyle = {
         container:{
           display:'flex',
           flexDirection:'row',
-          padding:'16px',
+          padding:'16px 16px 0 16px',
           borderRadius:'16px',
           backgroundColor:"white"
         },
@@ -149,62 +144,9 @@ const CurrentUser = (props) => {
           letterSpacing: '0em',
           color:'white',
       },
-      fadedContainer:{
-        opacity:'40%',
-        backgroundColor:'#e7e7e7',
-        
-        color:blacky,
-        marginLeft:props.width>767?"300px":'15px',
-        marginTop:props.width>767?"30px":'10px'
-      },
         dashedContainer:{ padding:'4px 8px', borderRadius:'12px', border:`1px dashed ${yellowColor}` },
       };
-  return (
-    <Layout
-    className="site-layout"
-    style={{  marginLeft: isMobile(props.width)?0: 150 }}>
-    <Content>
-      <Navbar heading="User Profile" width={props.width} showDrawer={props.showDrawer}/>
-      <div style={{height:'20px'}}/>
-      <div style={{ padding:'20px' }}>
-        <Row style={cssStyle.container}>
-            <Col><Col style={cssStyle.nameSymbol}>MR </Col>
-            </Col>
-            <Col style={{ marginTop: props.width<510?"16px":null,marginLeft:props.width<510?null:"20px"   }}>
-                <Row>
-                    <div style={cssStyle.navyText}>Meeren Rainga</div>
-                    <div style={cssStyle.verified}>Verified</div>
-                </Row>
-                <Row style={cssStyle.container2}>
-                    <div style={{...cssStyle.colordots, backgroundColor:cyanColor}}/>
-                    <div style={cssStyle.normalText}>Android</div>
-                </Row>
-                <Row style={{marginTop:'12px', display:'flex', flexDirection:'row', justifyContent:'space-between', flexGrow:1}}>
-                <Col style={cssStyle.dashedContainer}>
-                    <div style={cssStyle.navyText}>22.345 g</div>
-                    <div style={cssStyle.fadedText}>Physical Gold</div>
-                </Col>
-                <Col style={cssStyle.dashedContainer}>
-                    <div style={cssStyle.navyText}>22.345 g</div>
-                    <div style={cssStyle.fadedText}>Goal Account</div>
-                </Col>
-            </Row>
-            </Col>
-        </Row>
-        <Col>
-        <Row style={cssStyle.containerProfile}>
-          <Row style={{flexGrow:'1'}}><div>
-            <Tabs defaultActiveKey="1" onChange={handleTabChange} style={{width:'100%'}} >
-              <TabPane tab="Tab 1" key="1" >
-              <Profile/>
-              </TabPane>
-              <TabPane tab="Tab 2" key="2">
-              </TabPane>
-              </Tabs></div></Row>
-          
-          
-        </Row>
-        <Col>
+    return(<Col>
         <Row style={cssStyle.containerProfile}>
           <div style={cssStyle.titleProfile}>Profile Details</div>
           <div style={cssStyle.tealButton}> Edit User</div>
@@ -243,60 +185,6 @@ const CurrentUser = (props) => {
         
         </Col>
         </Col>
-        <Col>
-        <Row style={cssStyle.containerProfile}>
-          <div style={cssStyle.titleProfile}>Profile Details</div>
-          <div style={cssStyle.tealButton}> Edit User</div>
-          
-        </Row>
-        
-        <Col style={cssStyle.containerProfileBottom}>
-          <Row>
-          <Col style={{justifyContent:'space-evenly'}}>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Full Name</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Name" />
-            
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Email Address</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Email" />
-            
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Contact Phone</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Phone Number" />
-                      
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Home Address</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Address" />
-                      
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-            <div style={{...cssStyle.formLeft,color:blacky}}>Signup Method</div>
-            <Input style={cssStyle.fadedContainer} placeholder="Signup Method" />
-               
-            
-            </Row>
-          
-          </Col>
-          </Row>
-
-          
-
-        
-        </Col>
-        </Col>
-      </Col>
-        
-      </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }} >
-      Metfolio ©2023. All Rights Reserved.
-    </Footer>
-  </Layout>
-  )
-}
-
-export default CurrentUser
+)
+};
+export default Profile;
