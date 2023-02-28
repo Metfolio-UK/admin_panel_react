@@ -1,16 +1,11 @@
 import React,{useState} from 'react';
 import { Input } from 'antd';
 import { Row,Col } from 'antd'
-import {blacky, cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, tealColor} from '../const';
+import {blacky, cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, tealColor, greyButtonColor} from '../const';
 import { ProfileDetails } from '../helpers/dummydata';
 import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 const ProfileSettings = (props) => {
-    const [text, setText] = useState('Edit me!');
-
-  const handleInput = (event) => {
-    setText(event.target.innerText);
-  };
 
 
     const cssStyle = {
@@ -87,12 +82,19 @@ const ProfileSettings = (props) => {
         containerProfile:{
           display:'flex',
           flexDirection:'row',
-          padding:'35px',
+          padding:'24px',
           borderRadius:'20px 20px 0 0',
           backgroundColor:"white",
           marginTop:'30px',
           justifyContent:'space-between'
 
+        },
+        saveContainer:{
+          display:'flex',
+          flexDirection:'row',
+          backgroundColor:"white",
+          marginTop:'30px',
+          justifyContent:'right'
         },
         titleProfile:{
           fontFamily: 'Poppins',
@@ -106,7 +108,7 @@ const ProfileSettings = (props) => {
         containerProfileBottom:{
           display:'flex',
           flexDirection:'column',
-          padding:'20px',
+          padding:'24px',
           borderTop:'1px solid #E4E6EF',
           borderRadius:'0 0 20px 20px ',
           backgroundColor:"white",
@@ -114,13 +116,11 @@ const ProfileSettings = (props) => {
         },
         formLeft:{
           fontFamily: 'Poppins',
-            fontSize: '13px',
-            fontWeight: '550',
+            fontSize: '14px',
+            fontWeight: '500',
             lineHeight: '18px',
             letterSpacing: '0em',
-            color: greyColor,
-            marginLeft:'15px',
-            marginTop:props.width>767?"30px":'10px'
+            color: blacky,
         },
         formRight:{
           fontFamily: 'Poppins',
@@ -129,8 +129,6 @@ const ProfileSettings = (props) => {
             lineHeight: '18px',
             letterSpacing: '0em',
             color: blacky,
-            marginLeft:props.width>767?"300px":'15px',
-            marginTop:props.width>767?"30px":'10px'
         },
         tealButton:{
           display:'flex',
@@ -145,61 +143,62 @@ const ProfileSettings = (props) => {
           lineHeight: '18px',
           letterSpacing: '0em',
           color:'white',
+          cursor:'pointer'
       },
-      fadedContainer:{
-        opacity:'40%',
-        backgroundColor:'#e7e7e7',
-        
-        color:blacky,
-        marginLeft:props.width>767?"300px":'15px',
-        marginTop:props.width>767?"30px":'10px'
-      },
+      fadedContainer:{ borderRadius:'8px', height:'32px' , border:'1px solid white', backgroundColor:greyButtonColor, marginTop: isMobile(props.width)?"4px":null },
         dashedContainer:{ padding:'4px 8px', borderRadius:'12px', border:`1px dashed ${yellowColor}` },
+        space:{
+          marginBottom:'12px',
+          alignItems:'center',
+        },
       };
     return(<Col>
         <Row style={cssStyle.containerProfile}>
           <div style={cssStyle.titleProfile}>Profile Details</div>
-          <div style={cssStyle.tealButton}> Edit User</div>
+  
           
         </Row>
         
         <Col style={cssStyle.containerProfileBottom}>
-          <Row>
-          <Col style={{justifyContent:'space-evenly'}}>
-            <Row style={{flexDirection:props.width>200?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Full Name</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Name" />
+            <Row style={cssStyle.space}>
+              <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Full Name</Col>
+              <Col xs={24} sm={24} md={16}>
+              <Input style={cssStyle.fadedContainer}  placeholder={ProfileDetails[0].fullname }/>   
+              </Col>         
+            </Row>
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Email</Col>
+              <Col xs={24} sm={24} md={16}>
+              <Input style={cssStyle.fadedContainer}  placeholder={ProfileDetails[0].email }/>   
+              </Col> 
             
             </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Email Address</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Email" />
-            
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Contact Phone</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Phone Number" />
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Contact Phone</Col>
+              <Col xs={24} sm={24} md={16}>
+              <Input style={cssStyle.fadedContainer}  placeholder={ProfileDetails[0].phone }/>   
+              </Col> 
                       
             </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Home Address</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Address" />
-                      
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Home Address</Col>
+              <Col xs={24} sm={24} md={16}>
+              <Input style={cssStyle.fadedContainer}  placeholder={ProfileDetails[0].address }/>   
+              </Col> 
             </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-            <div style={{...cssStyle.formLeft,color:blacky}}>Signup Method</div>
-            <Input style={cssStyle.fadedContainer} placeholder="Signup Method" />
-               
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Signup Method</Col>
+              <Col xs={24} sm={24} md={16}>
+              <Input style={cssStyle.fadedContainer}  placeholder={ProfileDetails[0].signupmethod }/>   
+              </Col> 
             
             </Row>
+            <Row style={cssStyle.saveContainer}>
+            <div onClick={props.changeTabs} style={cssStyle.tealButton}> Save User</div>
           
+        </Row>
           </Col>
-          </Row>
-
           
-
-        
-        </Col>
         </Col>
         
 )

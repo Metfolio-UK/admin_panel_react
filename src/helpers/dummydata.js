@@ -198,7 +198,7 @@ export const ProfileDetails = [
     {
         fullname:'Meeren Raniga',
         email:'priyen@gmail.com',
-        phone:'(+44)7766140808',
+        phone:'(+44) 7766140808',
         address:'71/A, Fear Street',
         signupmethod:'Google'
     }

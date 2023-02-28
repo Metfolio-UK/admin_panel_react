@@ -85,7 +85,7 @@ const Profile = (props) => {
         containerProfile:{
           display:'flex',
           flexDirection:'row',
-          padding:'35px',
+          padding:'24px',
           borderRadius:'20px 20px 0 0',
           backgroundColor:"white",
           marginTop:'30px',
@@ -104,7 +104,7 @@ const Profile = (props) => {
         containerProfileBottom:{
           display:'flex',
           flexDirection:'column',
-          padding:'20px',
+          padding:'24px',
           borderTop:'1px solid #E4E6EF',
           borderRadius:'0 0 20px 20px ',
           backgroundColor:"white",
@@ -113,22 +113,21 @@ const Profile = (props) => {
         formLeft:{
           fontFamily: 'Poppins',
             fontSize: '13px',
-            fontWeight: '550',
+            fontWeight: '500',
             lineHeight: '18px',
             letterSpacing: '0em',
             color: greyColor,
-            marginLeft:'15px',
-            marginTop:props.width>767?"30px":'10px'
         },
         formRight:{
           fontFamily: 'Poppins',
-            fontSize: '14px',
-            fontWeight: '550',
-            lineHeight: '18px',
-            letterSpacing: '0em',
-            color: blacky,
-            marginLeft:props.width>767?"300px":'15px',
-            marginTop:props.width>767?"30px":'10px'
+          fontSize: '14px',
+          fontWeight: '550',
+          lineHeight: '18px',
+          letterSpacing: '0em',
+          color: blacky,
+        },
+        space:{
+          marginBottom:'12px',
         },
         tealButton:{
           display:'flex',
@@ -143,48 +142,44 @@ const Profile = (props) => {
           lineHeight: '18px',
           letterSpacing: '0em',
           color:'white',
+          cursor:'pointer',
       },
-        dashedContainer:{ padding:'4px 8px', borderRadius:'12px', border:`1px dashed ${yellowColor}` },
       };
-    return(<Col>
+    return(
+    <Col>
         <Row style={cssStyle.containerProfile}>
           <div style={cssStyle.titleProfile}>Profile Details</div>
-          <div style={cssStyle.tealButton}> Edit User</div>
+          <div onClick={props.changeTabs} style={cssStyle.tealButton}> Edit User</div>
           
         </Row>
         
         <Col style={cssStyle.containerProfileBottom}>
-          <Row>
-          <Col style={{justifyContent:'space-evenly'}}>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Full Name</div>
-              <div style={{...cssStyle.formRight,marginLeft:props.width>767?"330px":'15px'}}>{ProfileDetails[0].fullname}</div>
+            <Row style={cssStyle.space}>
+              <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Full Name</Col>
+              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{ProfileDetails[0].fullname}</Col>
             </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Email Address</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].email}</div>
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Email Address</Col>
+              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{ProfileDetails[0].email}</Col>
             </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Contact Phone</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].phone}</div>
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Contact Phone</Col>
+              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{ProfileDetails[0].phone}</Col>
             </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Home Address</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].address}</div>
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Home Address</Col>
+              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{ProfileDetails[0].address}</Col>
             </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-            <div style={{...cssStyle.formLeft}}>Signup Method</div>
-            <div style={{...cssStyle.formRight,marginBottom:'30px'}}>{ProfileDetails[0].signupmethod}</div>
+            <Row style={cssStyle.space}>
+            <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Signup Method</Col>
+              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{ProfileDetails[0].signupmethod}</Col>
             </Row>
-          
-          </Col>
-          </Row>
 
           
 
         
         </Col>
-        </Col>
+    </Col>
 )
 };
 export default Profile;
