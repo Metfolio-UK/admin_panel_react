@@ -12,7 +12,7 @@ const { Content, Footer } = Layout;
 
 const CurrentUser = (props) => {
     const [checked, setChecked] = useState(false);
-    const [tabs, setTabs] = useState(1);
+    const [tabs, setTabs] = useState(0);
     const onChange = () =>{
         setChecked(!checked);
     }
@@ -186,8 +186,6 @@ const CurrentUser = (props) => {
         backgroundColor:'#e7e7e7',
         
         color:blacky,
-        marginLeft:props.width>767?"300px":'15px',
-        marginTop:props.width>767?"30px":'10px'
       },
         dashedContainer:{ padding:'4px 8px', borderRadius:'12px', border:`1px dashed ${yellowColor}` },
         yellowButton:{
