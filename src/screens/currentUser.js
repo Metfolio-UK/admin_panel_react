@@ -1,11 +1,18 @@
 import {  Layout } from 'antd';
-import React from 'react';
-import { Row,Col } from 'antd'
+import React, { useState } from 'react';
+import { Row,Col,Checkbox } from 'antd'
 import {cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor} from '../const';
 import Navbar from '../components/navbar';
-const { Content, Footer } = Layout;
-const CurrentUser = (props) => {
 
+import styled from 'styled-components';
+const { Content, Footer } = Layout;
+
+const CurrentUser = (props) => {
+    const [checked, setChecked] = useState(false);
+
+    const onChange = () =>{
+        setChecked(!checked);
+    }
     const cssStyle = {
         container:{
           display:'flex',
@@ -14,6 +21,14 @@ const CurrentUser = (props) => {
           borderRadius:'16px',
           backgroundColor:"white"
         },
+        Colcontainer:{
+            display:'flex',
+            flexDirection:'column',
+            padding:'16px',
+            borderRadius:'16px',
+            marginTop:'20px',
+            backgroundColor:"white"
+          },
         container2:{
             display:'flex',
             flexDirection:'row',
@@ -42,6 +57,13 @@ const CurrentUser = (props) => {
           letterSpacing: '0em',
           color:'black',
         },
+        redText:{
+            fontFamily: 'Poppins',
+            fontSize: '10px',
+            fontWeight: '500',
+            letterSpacing: '0em',
+            color:'red',
+          },
         nameSymbol:{
             display:'flex',
             height:'200px',
@@ -77,6 +99,20 @@ const CurrentUser = (props) => {
             color:"black",
         },
         dashedContainer:{ padding:'4px 8px', borderRadius:'12px', border:`1px dashed ${yellowColor}` },
+        yellowButton:{
+            display:'flex',
+            flexDirection:'row',
+            alignItems:'center',
+            padding:'8px 16px',
+            backgroundColor:yellowColor,
+            borderRadius:'6px',
+            fontFamily: 'Poppins',
+            fontSize: '14px',
+            fontWeight: '600',
+            lineHeight: '18px',
+            letterSpacing: '0em',
+            color:'white',
+        },
       };
   return (
     <Layout
@@ -109,6 +145,14 @@ const CurrentUser = (props) => {
             </Row>
             </Col>
         </Row>
+        <Col style={cssStyle.Colcontainer}>
+            <div style={{...cssStyle.navyText, marginBottom:'16px'}}>Delete User</div>
+            <Checkbox onChange={onChange}>I confirm this account deletion</Checkbox>
+            {!checked&& <div style={{...cssStyle.redText,marginBottom:'12px'}}>Please check the box to delete the account</div>}
+            <Row style={{ justifyContent:'right' }}>
+            <div className='btn' style={cssStyle.yellowButton}>Delete User</div>   
+            </Row>     
+        </Col>
         
       </div>
     </Content>
