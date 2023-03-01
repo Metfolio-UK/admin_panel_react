@@ -1,11 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React,{useState} from 'react'
 import { getNameInitals, greyColor, nameSymbolColor, paginationColor, tealColor, yellowColor } from '../const';
 import { Pagination } from 'antd';
 import styled from 'styled-components';
-
+import { sellOrderPopupData } from '../helpers/dummydata';
+import OrderModal from './orderModal';
 
 const SellOrders = ({className, tableData}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
     const Page = styled(Pagination)`
         & .anticon {
             color: ${yellowColor};
@@ -177,7 +191,7 @@ const SellOrders = ({className, tableData}) => {
               
                 <td className='text-end'>
                   <a
-                    className='btn'
+                    className='btn' onClick={showModal}
                   >
                     <div className='btn' style={cssStyle.yellowButton}>View Order</div>
 
@@ -195,6 +209,8 @@ const SellOrders = ({className, tableData}) => {
         {/* end::Table container */}
         <Page style={{textAlign:'right'}} size='small' defaultCurrent={1} total={400} pageSize={4} showSizeChanger={false} />
       </div>
+      <OrderModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} data={sellOrderPopupData}/>
+
       {/* begin::Body */}
     </div>
   )
