@@ -9,11 +9,15 @@ const { Sider } = Layout;
 
 
 const SidebarFixed = (props) => {
-  const [tapped_orders, setTappedOrders] = useState(false);
-  const [tapped_home, setTappedHome] = useState(true);
-  const [tapped_user, setTappedUser] = useState(false);
-  const [tapped_search, setTappedSearch] = useState(false);
+  // const [tapped_orders, setTappedOrders] = useState(false);
+  // const [tapped_home, setTappedHome] = useState(true);
+  // const [tapped_user, setTappedUser] = useState(false);
+  // const [tapped_search, setTappedSearch] = useState(false);
 
+  const tapped_home = props.menu == 0 ? true : false;
+  const tapped_orders = props.menu == 1 ? true : false;
+  const tapped_user = props.menu == 2 ? true : false;
+  const tapped_search = props.menu == 3 ? true : false;
 
   const HomeContainer = styled.div`
   width:100px;
@@ -97,10 +101,11 @@ const SidebarFixed = (props) => {
         <Link to="/dashboard">
         <a>
         <HomeContainer onClick={()=>{
-            setTappedHome(true);
-            setTappedOrders(false);
-            setTappedUser(false);
-            setTappedSearch(false);
+            // setTappedHome(true);
+            // setTappedOrders(false);
+            // setTappedUser(false);
+            // setTappedSearch(false);
+            props.changeMenu(0);
             props.onClose();
         }} >
           <HomeOutlined style={{
@@ -118,10 +123,11 @@ const SidebarFixed = (props) => {
         <Link to='/orders'>
           <a>
           <OrderContainer onClick={()=>{
-            setTappedHome(false);
-            setTappedOrders(true);
-            setTappedUser(false);
-            setTappedSearch(false);
+            // setTappedHome(false);
+            // setTappedOrders(true);
+            // setTappedUser(false);
+            // setTappedSearch(false);
+            props.changeMenu(1);
             props.onClose();
         }} >
           <AppstoreOutlined style={{
@@ -140,10 +146,11 @@ const SidebarFixed = (props) => {
         <Link to='/users'>
           <a>
           <UserContainer onClick={()=>{
-            setTappedHome(false);
-            setTappedOrders(false);
-            setTappedSearch(false);
-            setTappedUser(true);
+            // setTappedHome(false);
+            // setTappedOrders(false);
+            // setTappedSearch(false);
+            // setTappedUser(true);
+            props.changeMenu(2);
             props.onClose();
         }} >
           <UserOutlined style={{
@@ -162,10 +169,11 @@ const SidebarFixed = (props) => {
         <Link to='/search'>
           <a>
           <SearchContainer onClick={()=>{
-            setTappedHome(false);
-            setTappedOrders(false);
-            setTappedUser(false);
-            setTappedSearch(true);
+            // setTappedHome(false);
+            // setTappedOrders(false);
+            // setTappedUser(false);
+            // setTappedSearch(true);
+            props.changeMenu(3);
             props.onClose();
         }} >
           <SearchOutlined style={{
@@ -216,8 +224,9 @@ const SidebarFixed = (props) => {
         <Link to="/dashboard">
         <a>
         <HomeContainer onClick={()=>{
-            setTappedHome(true);
-            setTappedOrders(false);setTappedUser(false);setTappedSearch(false);
+            // setTappedHome(true);
+            // setTappedOrders(false);setTappedUser(false);setTappedSearch(false);
+            props.changeMenu(0);
         }} >
           <HomeOutlined style={{
             fontSize:'24px',
@@ -234,8 +243,9 @@ const SidebarFixed = (props) => {
         <Link to='/orders'>
           <a>
           <OrderContainer onClick={()=>{
-            setTappedHome(false);
-            setTappedOrders(true);setTappedUser(false);setTappedSearch(false);
+            // setTappedHome(false);
+            // setTappedOrders(true);setTappedUser(false);setTappedSearch(false);
+            props.changeMenu(1);
         }} >
           <AppstoreOutlined style={{
             fontSize:'24px',
@@ -253,9 +263,10 @@ const SidebarFixed = (props) => {
         <Link to='/users'>
           <a>
           <UserContainer onClick={()=>{
-            setTappedHome(false);
-            setTappedOrders(false);
-            setTappedUser(true);setTappedSearch(false);
+            // setTappedHome(false);
+            // setTappedOrders(false);
+            // setTappedUser(true);setTappedSearch(false);
+            props.changeMenu(2);
           }} >
             <UserOutlined style={{
               fontSize:'24px',
@@ -272,10 +283,11 @@ const SidebarFixed = (props) => {
         <Link to='/search'>
           <a>
           <SearchContainer onClick={()=>{
-            setTappedHome(false);
-            setTappedOrders(false);
-            setTappedUser(false);
-            setTappedSearch(true);
+            // setTappedHome(false);
+            // setTappedOrders(false);
+            // setTappedUser(false);
+            // setTappedSearch(true);
+            props.changeMenu(3);
         }} >
           <SearchOutlined style={{
             fontSize:'24px',

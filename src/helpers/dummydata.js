@@ -51,6 +51,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Receive with bank',
         method_type:'Pending',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'23:11:34',
         date:'17/05/2023',
     },
@@ -63,6 +65,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Pay With Bank',
         method_type:'Low Risk',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'21:11:33',
         date:'17/05/2023',
     },
@@ -75,6 +79,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Card',
         method_type:'Medium Risk',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'23:11:34',
         date:'17/05/2023',
     },
@@ -87,6 +93,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Pay with Bank',
         method_type:'High Risk',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'23:11:34',
         date:'17/05/2023',
     }
@@ -103,7 +111,9 @@ export const RecurringTableData = [
         method:'Apple pay',
         method_type:'High Risk',
         order_type: 'Recurring Buy',
-        order_acc: 'Daily'
+        order_acc: 'Daily',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Shyam Vikram',
@@ -115,7 +125,9 @@ export const RecurringTableData = [
         method:'Card',
         method_type:'Low Risk',
         order_type: 'Recurring Buy',
-        order_acc: '17th of every Month'
+        order_acc: '17th of every Month',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Priyen Raniga',
@@ -127,7 +139,9 @@ export const RecurringTableData = [
         method:'Card',
         method_type:'Low Risk',
         order_type: 'Recurring Buy',
-        order_acc: 'Weekly on Sunday'
+        order_acc: 'Weekly on Sunday',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Abhishek Chakram',
@@ -139,7 +153,9 @@ export const RecurringTableData = [
         method:'Barclays',
         method_type:'Medium Risk',
         order_type: 'Recurring Buy',
-        order_acc: 'Weekly on Sunday'
+        order_acc: 'Weekly on Sunday',
+        time:'21:11:33',
+        date:'17/05/2023',
     }
 ];
 
@@ -154,7 +170,9 @@ export const BuyTableData = [
         method:'Google pay',
         method_type:'Low Risk',
         order_type: 'BUY',
-        order_acc: 'PG Account'
+        order_acc: 'PG Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Shyam Vikram',
@@ -166,7 +184,9 @@ export const BuyTableData = [
         method:'Pay With Bank',
         method_type:'Low Risk',
         order_type: 'BUY',
-        order_acc: 'Goal Account'
+        order_acc: 'Goal Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Priyen Raniga',
@@ -178,7 +198,9 @@ export const BuyTableData = [
         method:'Card',
         method_type:'Medium Risk',
         order_type: 'BUY',
-        order_acc: 'PG Account'
+        order_acc: 'PG Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Abhishek Chakram',
@@ -190,7 +212,9 @@ export const BuyTableData = [
         method:'Pay with Bank',
         method_type:'High Risk',
         order_type: 'BUY',
-        order_acc: 'PG Account'
+        order_acc: 'PG Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     }
 ];
 

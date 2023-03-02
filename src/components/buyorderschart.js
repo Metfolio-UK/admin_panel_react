@@ -5,9 +5,10 @@ import {getCSS, getCSSVariableValue} from '../_metronic/assets/ts/_utils/DomHelp
 import { getNameInitals, greyColor, nameSymbolColor, navyColor, paginationColor, seeall, tealColor, userbasechartColor, yellowColor } from '../const';
 import { Row,Col } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 
-const BuyOrderChart = ({ chartColor, chartHeight}) => {
+const BuyOrderChart = ({ chartColor, chartHeight, changeMenu}) => {
   const chartRef = useRef(null);
   const cssStyle = {
     
@@ -74,7 +75,7 @@ const BuyOrderChart = ({ chartColor, chartHeight}) => {
         borderRadius:'20px',
         height:'24px',
         fontFamily:'Poppins',
-        fontSize: '12px',
+        fontSize: '12px',color:'white',
 fontWeight: '500',
 lineHeight: '18px',
 letterSpacing: '0em',
@@ -111,10 +112,14 @@ letterSpacing: '0em',
             <div style={cssStyle.WhiteHeadText}>Buy Orders</div>
             <div style={cssStyle.WhiteSubHeadText}>All Time</div>
         </Col>
-        <Row style={cssStyle.seeAll}>
+        <Link to='/orders'>
+        <Row onClick={()=>{
+          changeMenu(1);
+        }} style={cssStyle.seeAll}>
             <div style={{marginRight:'4px'}}>See All</div>
             <ArrowRightOutlined/>
         </Row>
+        </Link>
       </Row>
       <div>
         <div ref={chartRef} ></div>

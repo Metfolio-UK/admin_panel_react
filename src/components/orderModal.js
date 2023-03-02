@@ -164,10 +164,7 @@ const OrderModal = (props) => {
                 <div style={cssStyle.navyText}>{props.data.row8left}</div>
                 <div style={cssStyle.navyText}>{props.data.row8right}</div>
             </Row>
-            <Row style={cssStyle.contentRow}>
-                <div style={cssStyle.navyText}>{props.data.row1left}</div>
-                <div style={cssStyle.navyText}>{props.data.row1right}</div>
-            </Row>
+            
             <div style={{height:'100px'}}/>
             <div className='btn' style={cssStyle.downloadButton}>Download Order Receipt</div>   
           </div>

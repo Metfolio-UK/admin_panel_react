@@ -134,6 +134,7 @@ const RecurringOrders = ({className, tabledata}) => {
                 <th className='min-w-125px'>Last QTY (g)</th>
                 <th className='min-w-200px'>Method</th>
                 <th className='min-w-150px'>Order Type</th>
+                <th className='min-w-150px'>Timestamp</th>
                 <th className='min-w-200px text-end rounded-end'></th>
               </tr>
             </thead>
@@ -186,6 +187,14 @@ const RecurringOrders = ({className, tabledata}) => {
                   </a>
                   <span className=' fw-semibold  d-block fs-7' style={cssStyle.greyColor}>
                   {item.order_acc}
+                  </span>
+                </td>
+                <td>
+                  <a href='#' className='text-dark fw-bold text-hover-primary d-block mb-1 fs-6'>
+                  {item.time}
+                  </a>
+                  <span className=' fw-semibold  d-block fs-7' style={cssStyle.greyColor}>
+                  {item.date}
                   </span>
                 </td>
               

@@ -133,6 +133,7 @@ const SellOrders = ({className, tableData}) => {
                 <th className='min-w-125px'>Value (£)</th>
                 <th className='min-w-125px'>Quantity (g)</th>
                 <th className='min-w-200px'>Method</th>
+                <th className='min-w-150px'>Order Type</th>
                 <th className='min-w-150px'>Timestamp</th>
                 <th className='min-w-200px text-end rounded-end'></th>
               </tr>
@@ -178,6 +179,14 @@ const SellOrders = ({className, tableData}) => {
                   </a>
                   <span className=' fw-semibold  d-block fs-7' style={cssStyle.greyColor}>
                   {item.method_type}
+                  </span>
+                </td>
+                <td>
+                  <a href='#' className='text-dark fw-bold text-hover-primary d-block mb-1 fs-6'>
+                  {item.order_type}
+                  </a>
+                  <span className=' fw-semibold  d-block fs-7' style={cssStyle.greyColor}>
+                  {item.order_acc}
                   </span>
                 </td>
                 <td>

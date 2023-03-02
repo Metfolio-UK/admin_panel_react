@@ -46,12 +46,12 @@ const Dashboard = (props) => {
                     flexGrow:1, flexDirection:'row',
                 }}>
                 <Col style={{ paddingRight:props.width<992?null :'20px'  }} xs={24} sm={24} md={24} lg={12}>
-                <UserBaseChart 
+                <UserBaseChart changeMenu={props.changeMenu}
                     chartColor='primary'
                     chartHeight='150px'/>
                 </Col>
                 <Col style={{ paddingTop: props.width<992?'20px':null, paddingRight:props.width<1200?null :'20px'  }}  xs={24} sm={24} md={24} lg={12}>
-                <BuyOrderChart 
+                <BuyOrderChart  changeMenu={props.changeMenu}
                     chartColor='primary'
                     chartHeight='150px'/>
                 </Col>
@@ -64,12 +64,12 @@ const Dashboard = (props) => {
                     flexGrow:1, flexDirection:'row',
                 }}>
                 <Col style={{ paddingRight:props.width<992?null :'20px'  }} xs={24} sm={24} md={24} lg={12}>
-                <SellOrderChart 
+                <SellOrderChart changeMenu={props.changeMenu}
                     chartColor='primary'
                     chartHeight='150px'/>
                 </Col>
                 <Col style={{ paddingTop: props.width<992?'20px':null, paddingRight:props.width<1200?null :'20px'  }}  xs={24} sm={24} md={24} lg={12}>
-                <RecurringOrderChart 
+                <RecurringOrderChart changeMenu={props.changeMenu}
                     chartColor='primary'
                     chartHeight='150px'/>
                 </Col>
