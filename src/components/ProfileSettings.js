@@ -1,74 +1,13 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { Input } from 'antd';
 import { Row,Col } from 'antd'
-import {blacky, cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, tealColor, greyButtonColor} from '../const';
+import {blacky, isMobile, yellowColor, greyButtonColor} from '../const';
 import { ProfileDetails } from '../helpers/dummydata';
-import { Tabs } from 'antd';
-const { TabPane } = Tabs;
 const ProfileSettings = (props) => {
 
 
     const cssStyle = {
-        container:{
-          display:'flex',
-          flexDirection:'row',
-          padding:'16px 16px 0 16px',
-          borderRadius:'16px',
-          backgroundColor:"white"
-        },
-        container2:{
-            display:'flex',
-            flexDirection:'row',
-            alignItems:'center',
-          },
-        colordots:{
-            height:'12px',
-            width:'12px',
-            borderRadius:'20px',
-            marginRight:'8px',
-        },
-        navyText:{
-          fontFamily: 'Poppins',
-          fontSize: '16px',
-          fontWeight: '600',
-          lineHeight: '30px',
-          letterSpacing: '0em',
-          color:'black',
-          textAlign:'left'
-        },
-        normalText:{
-          fontFamily: 'Poppins',
-          fontSize: '14px',
-          fontWeight: '400',
-          lineHeight: '30px',
-          letterSpacing: '0em',
-          color:'black',
-        },
-        nameSymbol:{
-            display:'flex',
-            height:'200px',
-            width:'200px',
-            backgroundColor:nameSymbolColor,
-            justifyContent:'center',
-            alignItems:'center',
-            borderRadius:'16px',
-            fontFamily:'Poppins',
-            fontSize:'88px',
-            fontWeight:'600',
-            border:`1px solid ${yellowColor}`
-        },
-        verified:{
-            marginLeft:'8px',
-            padding:'2px 12px',
-            backgroundColor: lightGreenColor,
-            color:greenColor,
-            fontFamily: 'Poppins',
-            fontSize: '16px',
-            fontWeight: '600',
-            lineHeight: '30px',
-            letterSpacing: '0em',
-            borderRadius:'8px',
-        },
+        
         fadedText:{
             fontFamily: 'Poppins',
             fontSize: '12px',

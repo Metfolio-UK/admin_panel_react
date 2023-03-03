@@ -1,11 +1,8 @@
-import {  Layout, Input } from 'antd';
+import {  Layout} from 'antd';
 import React, { useState } from 'react';
 import { Row,Col,Checkbox } from 'antd'
 import {cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, blacky} from '../const';
 import Navbar from '../components/navbar';
-import { ProfileDetails } from '../helpers/dummydata';
-
-import styled from 'styled-components';
 import Profile from '../components/profile';
 import ProfileSettings from '../components/ProfileSettings';
 const { Content, Footer } = Layout;
@@ -246,15 +243,15 @@ const CurrentUser = (props) => {
           <Col>
             <div onClick={()=>{
               setTabs(0);
-            }} style={tabs==0? cssStyle.seletedTab : cssStyle.unseletedTab}>Overview</div>
-            <div style={ tabs==0? cssStyle.seletedTabBar:null}/>
+            }} style={tabs===0? cssStyle.seletedTab : cssStyle.unseletedTab}>Overview</div>
+            <div style={ tabs===0? cssStyle.seletedTabBar:null}/>
           </Col>
           <div style={{width:'24px'}}/>
           <Col>
             <div onClick={()=>{
               setTabs(1);
-            }} style={tabs==1? cssStyle.seletedTab : cssStyle.unseletedTab}>Settings</div>
-            <div style={ tabs==1? cssStyle.seletedTabBar:null}/>
+            }} style={tabs===1? cssStyle.seletedTab : cssStyle.unseletedTab}>Settings</div>
+            <div style={ tabs===1? cssStyle.seletedTabBar:null}/>
           </Col>
         </Row>
         </Col>
@@ -264,7 +261,7 @@ const CurrentUser = (props) => {
 
 
         <Col>
-          { tabs == 0 ?
+          { tabs === 0 ?
           <Profile changeTabs={()=>{
             setTabs(1);
           }}/> :

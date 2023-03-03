@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {  Drawer } from 'antd';
-import { AppstoreOutlined,HomeOutlined,UserOutlined } from '@ant-design/icons';
+import { AppstoreOutlined,HomeOutlined,UserOutlined,GoldOutlined } from '@ant-design/icons';
 import { Col,Layout } from 'antd';
 import {sidebarColor,greyColor, menuSelectedColor  } from '../const';
 import { Link } from "react-router-dom";
@@ -8,6 +8,8 @@ import styled from 'styled-components';
 const { Sider } = Layout;
 const SidebarDrawer = (props) => {
   const [tapped_orders, setTappedOrders] = useState(false);
+  const [tapped_inv, setTappedInv] = useState(false);
+  
   const [tapped_home, setTappedHome] = useState(true);
   const [tapped_user, setTappedUser] = useState(false);
 
@@ -57,6 +59,21 @@ const SidebarDrawer = (props) => {
       color:white;
   }
   `;
+  const InvContainer = styled.div`
+  width:100px;
+  height: 80px;
+  border-radius:12px;
+  align-items:center;
+  background-color: ${tapped_inv?menuSelectedColor:null};
+  display:flex;
+  flex-direction:column;
+  margin-bottom:16px;
+  justify-content:center;
+  color: ${tapped_inv?"white": greyColor};
+  &:hover{
+      color:white;
+  }
+  `;
 
 
   return (
@@ -80,6 +97,7 @@ const SidebarDrawer = (props) => {
             setTappedHome(true);
             setTappedOrders(false);
             setTappedUser(false);
+            setTappedInv(false);
             props.onClose();
         }} >
           <HomeOutlined style={{
@@ -100,6 +118,7 @@ const SidebarDrawer = (props) => {
             setTappedHome(false);
             setTappedOrders(true);
             setTappedUser(false);
+            setTappedInv(false);
             props.onClose();
         }} >
           <AppstoreOutlined style={{
@@ -121,6 +140,7 @@ const SidebarDrawer = (props) => {
             setTappedHome(false);
             setTappedOrders(false);
             setTappedUser(true);
+            setTappedInv(false);
             props.onClose();
         }} >
           <UserOutlined style={{
@@ -134,6 +154,28 @@ const SidebarDrawer = (props) => {
             fontWeight:'500',
           }}>Users</div>
         </UserContainer>
+          </a>
+        </Link>
+        <Link to='/inventory'>
+          <a>
+          <InvContainer onClick={()=>{
+            setTappedHome(false);
+            setTappedOrders(false);
+            setTappedInv(true);
+            setTappedUser(false);
+            props.onClose();
+        }} >
+          <GoldOutlined style={{
+            fontSize:'28px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Inventory</div>
+        </InvContainer>
           </a>
         </Link>
         </Col>
