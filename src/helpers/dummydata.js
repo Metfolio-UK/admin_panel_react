@@ -228,7 +228,6 @@ export const ProfileDetails = [
     }
 ];
 
-<<<<<<< HEAD
 export const InventoryTableData = [
     {
         name:'Meeren Raniga',
@@ -267,7 +266,6 @@ export const InventoryTableData = [
         date:'17/05/2023',
     }
 ];
-=======
 export const goalOrderPopupData= {
     image:'images/goal.png',
     imageHeight: "35px",
@@ -349,4 +347,3 @@ export const sellOrderPopupData= {
     row8left:'Total Deposited',
     row8right:'£150.00'
 };
->>>>>>> 040dbd076e0be3ca08c3fdaaeb224d0daae1e1ba

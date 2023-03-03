@@ -47,14 +47,10 @@ const Home = (props) => {
       <Route exact path='/users' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <Users width={props.width} showDrawer={showDrawer}/>
       }/>} />
-<<<<<<< HEAD
       <Route exact path='/inventory' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
         <Inventory width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      <Route exact path='/search' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
-=======
       <Route exact path='/search' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
->>>>>>> 040dbd076e0be3ca08c3fdaaeb224d0daae1e1ba
         <Search width={props.width} showDrawer={showDrawer}/>
       }/>} />
 
