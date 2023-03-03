@@ -11,14 +11,18 @@ import Search from './search';
 import {Login } from '../components/Login';
 import Layoutdefiner from '../components/layoutdefiner';
 import CurrentUser from './currentUser';
+import Inventory from './inventory';
 
 
 
 
 const Home = (props) => {
+  const [menu, setmenu] = useState(0);
   const [open, setOpen] = useState(false);
 
-
+  const changeMenu = (curr_menu) => {
+    setmenu(curr_menu);
+  }
 
   const showDrawer = () => {
     setOpen(true);
@@ -34,20 +38,23 @@ const Home = (props) => {
    
     <Routes>
       <Route exact path='/' element={<Login width={props.width}/>} />
-      <Route exact path='/dashboard' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
-        <Dashboard width={props.width} showDrawer={showDrawer}/>
+      <Route exact path='/dashboard' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
+        <Dashboard changeMenu={changeMenu} width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      <Route exact path='/orders' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
+      <Route exact path='/orders' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <Orders width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      <Route exact path='/users' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
+      <Route exact path='/users' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <Users width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      <Route exact path='/search' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
+      <Route exact path='/inventory' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
+        <Inventory width={props.width} showDrawer={showDrawer}/>
+      }/>} />
+      <Route exact path='/search' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <Search width={props.width} showDrawer={showDrawer}/>
       }/>} />
 
-      <Route exact path='/currentUser' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
+      <Route exact path='/currentUser' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <CurrentUser width={props.width} showDrawer={showDrawer}/>
       }/>} />
     </Routes>

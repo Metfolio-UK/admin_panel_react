@@ -1,29 +1,34 @@
-import {  Layout } from 'antd';
-import React,{useState} from 'react';
-import { Row,Col,Input } from 'antd'
-import {blacky, cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, tealColor} from '../const';
+import {  Layout} from 'antd';
+import React, { useState } from 'react';
+import { Row,Col,Checkbox } from 'antd'
+import {cyanColor, greenColor, greyColor, isMobile, lightGreenColor, nameSymbolColor, yellowColor, blacky} from '../const';
 import Navbar from '../components/navbar';
-import { ProfileDetails } from '../helpers/dummydata';
-import { MyContainer } from '../components/Tabs';
-import { Tabs } from 'antd';
-import PaymentRisks from '../components/PaymentRisks';
 import Profile from '../components/profile';
 import ProfileSettings from '../components/ProfileSettings';
-const { TabPane } = Tabs;
 const { Content, Footer } = Layout;
-const CurrentUser = (props) => {
-  function handleTabChange(key) {
-    console.log(key); // You can handle tab change here
-  }
 
+const CurrentUser = (props) => {
+    const [checked, setChecked] = useState(false);
+    const [tabs, setTabs] = useState(0);
+    const onChange = () =>{
+        setChecked(!checked);
+    }
     const cssStyle = {
         container:{
           display:'flex',
-          flexDirection:'row',
-          padding:'16px',
+          flexDirection:'column',
+          padding:'16px 16px 0px 16px',
           borderRadius:'16px',
           backgroundColor:"white"
         },
+        Colcontainer:{
+            display:'flex',
+            flexDirection:'column',
+            padding:'24px',
+            borderRadius:'16px',
+            marginTop:'20px',
+            backgroundColor:"white"
+          },
         container2:{
             display:'flex',
             flexDirection:'row',
@@ -44,6 +49,26 @@ const CurrentUser = (props) => {
           color:'black',
           textAlign:'left'
         },
+        seletedTab:{
+          fontFamily: 'Poppins',
+          fontSize: '16px',
+          fontWeight: '500',
+          lineHeight: '30px',
+          letterSpacing: '0em',
+          color:yellowColor,
+          textAlign:'left',
+          cursor:'pointer',
+        },
+        unseletedTab:{
+          fontFamily: 'Poppins',
+          fontSize: '16px',
+          fontWeight: '500',
+          lineHeight: '30px',
+          letterSpacing: '0em',
+          color:greyColor,
+          textAlign:'left',
+          cursor:'pointer',
+        },
         normalText:{
           fontFamily: 'Poppins',
           fontSize: '14px',
@@ -52,6 +77,13 @@ const CurrentUser = (props) => {
           letterSpacing: '0em',
           color:'black',
         },
+        redText:{
+            fontFamily: 'Poppins',
+            fontSize: '10px',
+            fontWeight: '500',
+            letterSpacing: '0em',
+            color:'red',
+          },
         nameSymbol:{
             display:'flex',
             height:'200px',
@@ -123,7 +155,6 @@ const CurrentUser = (props) => {
             letterSpacing: '0em',
             color: greyColor,
             marginLeft:'15px',
-            marginTop:props.width>767?"30px":'10px'
         },
         formRight:{
           fontFamily: 'Poppins',
@@ -132,8 +163,6 @@ const CurrentUser = (props) => {
             lineHeight: '18px',
             letterSpacing: '0em',
             color: blacky,
-            marginLeft:props.width>767?"300px":'15px',
-            marginTop:props.width>767?"30px":'10px'
         },
         tealButton:{
           display:'flex',
@@ -154,10 +183,26 @@ const CurrentUser = (props) => {
         backgroundColor:'#e7e7e7',
         
         color:blacky,
-        marginLeft:props.width>767?"300px":'15px',
-        marginTop:props.width>767?"30px":'10px'
       },
         dashedContainer:{ padding:'4px 8px', borderRadius:'12px', border:`1px dashed ${yellowColor}` },
+        yellowButton:{
+            display:'flex',
+            flexDirection:'row',
+            alignItems:'center',
+            padding:'8px 16px',
+            backgroundColor:yellowColor,
+            borderRadius:'6px',
+            fontFamily: 'Poppins',
+            fontSize: '14px',
+            fontWeight: '600',
+            lineHeight: '18px',
+            letterSpacing: '0em',
+            color:'white',
+        },
+        space:{
+          marginTop:'20px',
+        },
+        seletedTabBar:{ height:'2px', backgroundColor:yellowColor, marginTop:'8px' },
       };
   return (
     <Layout
@@ -167,7 +212,8 @@ const CurrentUser = (props) => {
       <Navbar heading="User Profile" width={props.width} showDrawer={props.showDrawer}/>
       <div style={{height:'20px'}}/>
       <div style={{ padding:'20px' }}>
-        <Row style={cssStyle.container}>
+        <Col style={cssStyle.container}>
+        <Row >
             <Col><Col style={cssStyle.nameSymbol}>MR </Col>
             </Col>
             <Col style={{ marginTop: props.width<510?"16px":null,marginLeft:props.width<510?null:"20px"   }}>
@@ -190,103 +236,47 @@ const CurrentUser = (props) => {
                 </Col>
             </Row>
             </Col>
+            
         </Row>
-        <Col>
-        <Row style={cssStyle.containerProfile}>
-          <Row style={{flexGrow:'1'}}><div>
-            <Tabs defaultActiveKey="1" onChange={handleTabChange} style={{width:'100%'}} >
-              <TabPane tab="Tab 1" key="1" >
-              <Profile/>
-              </TabPane>
-              <TabPane tab="Tab 2" key="2">
-              </TabPane>
-              </Tabs></div></Row>
-          
-          
-        </Row>
-        <Col>
-        <Row style={cssStyle.containerProfile}>
-          <div style={cssStyle.titleProfile}>Profile Details</div>
-          <div style={cssStyle.tealButton}> Edit User</div>
-          
-        </Row>
-        
-        <Col style={cssStyle.containerProfileBottom}>
-          <Row>
-          <Col style={{justifyContent:'space-evenly'}}>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Full Name</div>
-              <div style={{...cssStyle.formRight,marginLeft:props.width>767?"330px":'15px'}}>{ProfileDetails[0].fullname}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Email Address</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].email}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Contact Phone</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].phone}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={cssStyle.formLeft}>Home Address</div>
-              <div style={cssStyle.formRight}>{ProfileDetails[0].address}</div>
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-            <div style={{...cssStyle.formLeft}}>Signup Method</div>
-            <div style={{...cssStyle.formRight,marginBottom:'30px'}}>{ProfileDetails[0].signupmethod}</div>
-            </Row>
-          
+        <Row style={cssStyle.space}>
+          <div style={{width:'24px'}}/>
+          <Col>
+            <div onClick={()=>{
+              setTabs(0);
+            }} style={tabs===0? cssStyle.seletedTab : cssStyle.unseletedTab}>Overview</div>
+            <div style={ tabs===0? cssStyle.seletedTabBar:null}/>
           </Col>
-          </Row>
-
-          
-
-        
-        </Col>
-        </Col>
-        <Col>
-        <Row style={cssStyle.containerProfile}>
-          <div style={cssStyle.titleProfile}>Profile Details</div>
-          <div style={cssStyle.tealButton}> Edit User</div>
-          
-        </Row>
-        
-        <Col style={cssStyle.containerProfileBottom}>
-          <Row>
-          <Col style={{justifyContent:'space-evenly'}}>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Full Name</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Name" />
-            
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Email Address</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Email" />
-            
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Contact Phone</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Phone Number" />
-                      
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-              <div style={{...cssStyle.formLeft,color:blacky}}>Home Address</div>
-              <Input style={cssStyle.fadedContainer} placeholder="Address" />
-                      
-            </Row>
-            <Row style={{flexDirection:props.width>767?"row":'column'}}>
-            <div style={{...cssStyle.formLeft,color:blacky}}>Signup Method</div>
-            <Input style={cssStyle.fadedContainer} placeholder="Signup Method" />
-               
-            
-            </Row>
-          
+          <div style={{width:'24px'}}/>
+          <Col>
+            <div onClick={()=>{
+              setTabs(1);
+            }} style={tabs===1? cssStyle.seletedTab : cssStyle.unseletedTab}>Settings</div>
+            <div style={ tabs===1? cssStyle.seletedTabBar:null}/>
           </Col>
-          </Row>
+        </Row>
+        </Col>
+        
+        <Col>
+        
 
-          
 
+        <Col>
+          { tabs === 0 ?
+          <Profile changeTabs={()=>{
+            setTabs(1);
+          }}/> :
+          <ProfileSettings changeTabs={()=>{
+            setTabs(0);
+          }}/>}
         
         </Col>
+        <Col style={cssStyle.Colcontainer}>
+            <div style={{...cssStyle.navyText, marginBottom:'16px'}}>Delete User</div>
+            <Checkbox onChange={onChange}>I confirm this account deletion</Checkbox>
+            {!checked&& <div style={{...cssStyle.redText,marginBottom:'12px'}}>Please check the box to delete the account</div>}
+            <Row style={{ justifyContent:'right' }}>
+            <div className='btn' style={cssStyle.yellowButton}>Delete User</div>   
+            </Row>     
         </Col>
       </Col>
         
