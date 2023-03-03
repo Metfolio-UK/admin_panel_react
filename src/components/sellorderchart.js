@@ -8,7 +8,7 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 
-const SellOrderChart = ({ chartColor, chartHeight, changeMenu}) => {
+const SellOrderChart = ({ chartColor, chartHeight, changeMenu,}) => {
   const chartRef = useRef(null);
   const cssStyle = {
     

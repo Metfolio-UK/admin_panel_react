@@ -347,3 +347,24 @@ export const sellOrderPopupData= {
     row8left:'Total Deposited',
     row8right:'£150.00'
 };
+export const invoicePopupData= {
+    image:'images/buy_gold.png',
+    imageHeight: "23px",
+    imageWidth:'37px',
+    marginTop:'10px',
+    entry_id:'48',
+    name:'Meeren Raniga',
+    user_type :'Android',
+    time:'23:11:34',
+    date:'17/05/2023',
+    row1left:'Supplier',
+    row1right:'Baird and Co LTD',
+    row2left:'QTY(grams)',
+    row2right:'50',
+    row3left:'Gold Value',
+    row3right:'£2,500.00',
+    row4left:'Supplier Fee',
+    row4right:'0.99%',
+    row5left:'Total',
+    row5right:'£2,595.00',
+};

@@ -1,5 +1,5 @@
 import {  Layout } from 'antd';
-import React,{useState} from 'react';
+import React,{useState, useRef} from 'react';
 import {isMobile} from '../const';
 import SidebarFixed from '../components/sidebarFixed';
 import SidebarDrawer from '../components/sidebarDrawer';
@@ -20,6 +20,7 @@ const Home = (props) => {
   const [menu, setmenu] = useState(0);
   const [open, setOpen] = useState(false);
 
+
   const changeMenu = (curr_menu) => {
     setmenu(curr_menu);
   }
@@ -32,7 +33,7 @@ const Home = (props) => {
     setOpen(false);
   };
 
-
+ 
 
   return (
    
@@ -42,12 +43,12 @@ const Home = (props) => {
         <Dashboard changeMenu={changeMenu} width={props.width} showDrawer={showDrawer}/>
       }/>} />
       <Route exact path='/orders' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
-        <Orders width={props.width} showDrawer={showDrawer}/>
+        <Orders  width={props.width} showDrawer={showDrawer}/>
       }/>} />
       <Route exact path='/users' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
-        <Users width={props.width} showDrawer={showDrawer}/>
+        <Users   width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      <Route exact path='/inventory' element={<Layoutdefiner width={props.width} open={open} onClose={onClose} children={
+      <Route exact path='/inventory' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <Inventory width={props.width} showDrawer={showDrawer}/>
       }/>} />
       <Route exact path='/search' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={

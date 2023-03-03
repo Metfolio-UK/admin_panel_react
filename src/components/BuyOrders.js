@@ -107,7 +107,7 @@ const BuyOrders = ({className, tabledata}) => {
         }
     };
   return (
-    <div className={`card ${className}`} >
+    <div className={`card ${className}`}  >
       {/* begin::Header */}
       <div style={cssStyle.cardpadding} className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>

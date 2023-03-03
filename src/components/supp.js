@@ -131,8 +131,10 @@ const Supp = () => {
     <Col>
     <Col style={cssStyle.container}>
         <Row style={{justifyContent:'space-between'}}>
-            <Col><div style={cssStyle.titleText}>Suppliers</div>
-        <div style={cssStyle.fadedText}>1 supplier</div></Col>
+            <Col>
+            <div style={cssStyle.titleText}>Suppliers</div>
+        <div style={cssStyle.fadedText}>1 supplier</div>
+        </Col>
         
         <Row style={cssStyle.headerRow}>
             <div style={cssStyle.yellowButton}>Export</div>

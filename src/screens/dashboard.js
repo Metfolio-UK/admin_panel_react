@@ -51,7 +51,7 @@ const Dashboard = (props) => {
                     chartHeight='150px'/>
                 </Col>
                 <Col style={{ paddingTop: props.width<992?'20px':null, paddingRight:props.width<1200?null :'20px'  }}  xs={24} sm={24} md={24} lg={12}>
-                <BuyOrderChart  changeMenu={props.changeMenu}
+                <BuyOrderChart changeMenu={props.changeMenu}
                     chartColor='primary'
                     chartHeight='150px'/>
                 </Col>
@@ -64,7 +64,7 @@ const Dashboard = (props) => {
                     flexGrow:1, flexDirection:'row',
                 }}>
                 <Col style={{ paddingRight:props.width<992?null :'20px'  }} xs={24} sm={24} md={24} lg={12}>
-                <SellOrderChart changeMenu={props.changeMenu}
+                <SellOrderChart  changeMenu={props.changeMenu}
                     chartColor='primary'
                     chartHeight='150px'/>
                 </Col>

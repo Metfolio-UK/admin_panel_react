@@ -1,5 +1,5 @@
 import {  Layout } from 'antd';
-import React from 'react';
+import React, { useEffect} from 'react';
 import { Row,Col } from 'antd'
 import {isMobile} from '../const';
 import Navbar from '../components/navbar';
@@ -38,9 +38,9 @@ const Orders = (props) => {
           
         
         
-        <BuyOrders tabledata={ BuyTableData } className='mb-5 mb-xl-8'/>
+        <BuyOrders  tabledata={ BuyTableData } className='mb-5 mb-xl-8'/>
         <RecurringOrders tabledata={ RecurringTableData } className='mb-5 mb-xl-8'/>
-        <SellOrders tableData={ SellOrdersData  } className='mb-5 mb-xl-8'/>
+        <SellOrders  tableData={ SellOrdersData  } className='mb-5 mb-xl-8'/>
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }} >

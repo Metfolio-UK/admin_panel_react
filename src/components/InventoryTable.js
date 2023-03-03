@@ -1,11 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React,{useState} from 'react'
 import { getNameInitals, greyColor, nameSymbolColor, paginationColor, tealColor, yellowColor } from '../const';
 import { Pagination } from 'antd';
 import styled from 'styled-components';
+import EntryModal from './entryModal';
+import { invoicePopupData } from '../helpers/dummydata';
 
 
 const InventoryTable = ({className, tabledata}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
     const Page = styled(Pagination)`
         & .anticon {
             color: ${yellowColor};
@@ -173,7 +188,7 @@ const InventoryTable = ({className, tabledata}) => {
               
                 <td className='text-end'>
                   <a
-                    className='btn'
+                    className='btn' onClick={showModal}
                   >
                     <div className='btn' style={cssStyle.yellowButton}>View Entry</div>
 
@@ -191,6 +206,7 @@ const InventoryTable = ({className, tabledata}) => {
         {/* end::Table container */}
         <Page style={{textAlign:'right'}} size='small' defaultCurrent={1} total={400} pageSize={4} showSizeChanger={false} />
       </div>
+      <EntryModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} data={invoicePopupData}/>
       {/* begin::Body */}
     </div>
   )

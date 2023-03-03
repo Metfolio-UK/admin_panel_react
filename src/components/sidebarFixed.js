@@ -183,25 +183,7 @@ const SidebarFixed = (props) => {
         </UserContainer>
           </a>
         </Link>
-        <Link to='/inventory'>
-          <a>
-          <InvContainer onClick={()=>{
-            props.changeMenu(4);
-            props.onClose();
-        }} >
-          <GoldOutlined style={{
-            fontSize:'28px',
-            fontWeight:'500',
-            
-          }}/>
-          <div style={{
-            fontFamily:'Poppins',
-            fontSize:'14px',
-            fontWeight:'500',
-          }}>Inventory</div>
-        </InvContainer>
-          </a>
-        </Link>
+        
         <Link to='/search'>
           <a>
           <SearchContainer onClick={()=>{
@@ -223,6 +205,25 @@ const SidebarFixed = (props) => {
             fontWeight:'500',
           }}>Search</div>
         </SearchContainer>
+          </a>
+        </Link>
+        <Link to='/inventory'>
+          <a>
+          <InvContainer onClick={()=>{
+            props.changeMenu(4);
+            props.onClose();
+        }} >
+          <GoldOutlined style={{
+            fontSize:'28px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Inventory</div>
+        </InvContainer>
           </a>
         </Link>
         </Col>
@@ -316,24 +317,7 @@ const SidebarFixed = (props) => {
           </UserContainer>
         </a>
         </Link>
-        <Link to='/inventory'>
-          <a>
-          <InvContainer onClick={()=>{
-            props.changeMenu(4);
-            props.onClose();
-          }} >
-            <GoldOutlined style={{
-              fontSize:'28px',
-              fontWeight:'500',
-            }}/>
-            <div style={{
-              fontFamily:'Poppins',
-              fontSize:'14px',
-              fontWeight:'500',
-            }}>Inventory</div>
-          </InvContainer>
-        </a>
-        </Link>
+        
         <Link to='/search'>
           <a>
           <SearchContainer onClick={()=>{
@@ -355,6 +339,24 @@ const SidebarFixed = (props) => {
           }}>Search</div>
         </SearchContainer>
           </a>
+        </Link>
+        <Link to='/inventory'>
+          <a>
+          <InvContainer onClick={()=>{
+            props.changeMenu(4);
+            props.onClose();
+          }} >
+            <GoldOutlined style={{
+              fontSize:'28px',
+              fontWeight:'500',
+            }}/>
+            <div style={{
+              fontFamily:'Poppins',
+              fontSize:'14px',
+              fontWeight:'500',
+            }}>Inventory</div>
+          </InvContainer>
+        </a>
         </Link>
         </Col>
       </Sider>)
