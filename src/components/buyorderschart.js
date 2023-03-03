@@ -8,7 +8,7 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 
-const BuyOrderChart = ({ chartColor, chartHeight, changeMenu}) => {
+const BuyOrderChart = ({ chartColor, chartHeight, changeMenu, scrollToPosition}) => {
   const chartRef = useRef(null);
   const cssStyle = {
     
@@ -115,6 +115,7 @@ letterSpacing: '0em',
         <Link to='/orders'>
         <Row onClick={()=>{
           changeMenu(1);
+          scrollToPosition('buy_table');
         }} style={cssStyle.seeAll}>
             <div style={{marginRight:'4px'}}>See All</div>
             <ArrowRightOutlined/>

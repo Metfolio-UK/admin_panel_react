@@ -1,5 +1,5 @@
 import {  Layout } from 'antd';
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { Row,Col } from 'antd'
 import {isMobile} from '../const';
 import Navbar from '../components/navbar';
@@ -8,7 +8,19 @@ import UsersTable from '../components/UsersTable';
 import UserBaseChart2 from '../components/userbasechart2';
 import { UserTableData } from '../helpers/dummydata';
 const { Content, Footer } = Layout;
-const Orders = (props) => {
+const UserScreem = (props) => {
+  const userSection = useRef(null);
+
+  useEffect(() => {
+    if(props.scrollTo=="user_table"){
+      window.scrollTo({
+        top: userSection.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  }, [])
+  
+
   return (
     <Layout
     className="site-layout"
@@ -34,7 +46,9 @@ const Orders = (props) => {
         <div style={{height: props.width>992 ? null :'30px'}}/>
           
         
-        <UsersTable tableData={ UserTableData } className='mb-5 mb-xl-8'/>
+        <div ref={userSection}>
+          <UsersTable tableData={ UserTableData } className='mb-5 mb-xl-8'/>
+        </div>
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }} >
@@ -44,4 +58,4 @@ const Orders = (props) => {
   )
 }
 
-export default Orders
+export default UserScreem

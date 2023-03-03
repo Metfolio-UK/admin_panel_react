@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 const Layoutdefiner = (props) => {
   return (
     <Layout hasSider>
-        <SidebarFixed menu={props.menu} changeMenu={props.changeMenu} width={props.width} open={props.open} onClose={props.onClose}/>
+        <SidebarFixed scrollToPosition={props.scrollToPosition} menu={props.menu} changeMenu={props.changeMenu} width={props.width} open={props.open} onClose={props.onClose}/>
         {props.children}
     </Layout>
   )

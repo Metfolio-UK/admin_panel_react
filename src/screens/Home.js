@@ -19,6 +19,7 @@ import Inventory from './inventory';
 const Home = (props) => {
   const [menu, setmenu] = useState(0);
   const [open, setOpen] = useState(false);
+  const [scrollTo, setScrollTo] = useState("");
 
 
   const changeMenu = (curr_menu) => {
@@ -33,6 +34,10 @@ const Home = (props) => {
     setOpen(false);
   };
 
+  const scrollToPosition = (position) => {
+    console.log("scroll position to user_table");
+    setScrollTo(position);
+  }
  
 
   return (
@@ -40,13 +45,13 @@ const Home = (props) => {
     <Routes>
       <Route exact path='/' element={<Login width={props.width}/>} />
       <Route exact path='/dashboard' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
-        <Dashboard changeMenu={changeMenu} width={props.width} showDrawer={showDrawer}/>
+        <Dashboard scrollToPosition={scrollToPosition} changeMenu={changeMenu} width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      <Route exact path='/orders' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
-        <Orders  width={props.width} showDrawer={showDrawer}/>
+      <Route exact path='/orders' element={<Layoutdefiner scrollToPosition={scrollToPosition} menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
+        <Orders scrollTo={scrollTo} width={props.width} showDrawer={showDrawer}/>
       }/>} />
-      <Route exact path='/users' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
-        <Users   width={props.width} showDrawer={showDrawer}/>
+      <Route exact path='/users' element={<Layoutdefiner scrollToPosition={scrollToPosition} menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
+        <Users scrollTo={scrollTo}  width={props.width} showDrawer={showDrawer}/>
       }/>} />
       <Route exact path='/inventory' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <Inventory width={props.width} showDrawer={showDrawer}/>

@@ -124,6 +124,7 @@ const SidebarFixed = (props) => {
             // setTappedSearch(false);
             props.changeMenu(0);
             props.onClose();
+            props.scrollToPosition("");
         }} >
           <HomeOutlined style={{
             fontSize:'24px',
@@ -146,6 +147,7 @@ const SidebarFixed = (props) => {
             // setTappedSearch(false);
             props.changeMenu(1);
             props.onClose();
+            props.scrollToPosition("");
         }} >
           <AppstoreOutlined style={{
             fontSize:'24px',
@@ -169,6 +171,7 @@ const SidebarFixed = (props) => {
             // setTappedUser(true);
             props.changeMenu(2);
             props.onClose();
+            props.scrollToPosition("");
         }} >
           <UserOutlined style={{
             fontSize:'24px',
@@ -193,6 +196,7 @@ const SidebarFixed = (props) => {
             // setTappedSearch(true);
             props.changeMenu(3);
             props.onClose();
+            props.scrollToPosition("");
         }} >
           <SearchOutlined style={{
             fontSize:'24px',
@@ -212,6 +216,7 @@ const SidebarFixed = (props) => {
           <InvContainer onClick={()=>{
             props.changeMenu(4);
             props.onClose();
+            props.scrollToPosition("");
         }} >
           <GoldOutlined style={{
             fontSize:'28px',
@@ -264,6 +269,7 @@ const SidebarFixed = (props) => {
             // setTappedHome(true);
             // setTappedOrders(false);setTappedUser(false);setTappedSearch(false);
             props.changeMenu(0);
+            props.scrollToPosition("");
         }} >
           <HomeOutlined style={{
             fontSize:'24px',
@@ -283,6 +289,7 @@ const SidebarFixed = (props) => {
             // setTappedHome(false);
             // setTappedOrders(true);setTappedUser(false);setTappedSearch(false);
             props.changeMenu(1);
+            props.scrollToPosition("");
         }} >
           <AppstoreOutlined style={{
             fontSize:'24px',
@@ -304,6 +311,7 @@ const SidebarFixed = (props) => {
             // setTappedOrders(false);
             // setTappedUser(true);setTappedSearch(false);
             props.changeMenu(2);
+            props.scrollToPosition("");
           }} >
             <UserOutlined style={{
               fontSize:'24px',
@@ -326,6 +334,7 @@ const SidebarFixed = (props) => {
             // setTappedUser(false);
             // setTappedSearch(true);
             props.changeMenu(3);
+            props.scrollToPosition("");
         }} >
           <SearchOutlined style={{
             fontSize:'24px',
@@ -344,7 +353,7 @@ const SidebarFixed = (props) => {
           <a>
           <InvContainer onClick={()=>{
             props.changeMenu(4);
-            props.onClose();
+            props.scrollToPosition("");
           }} >
             <GoldOutlined style={{
               fontSize:'28px',

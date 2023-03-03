@@ -1,5 +1,5 @@
 import {  Layout } from 'antd';
-import React, { useEffect} from 'react';
+import React, { useEffect, useRef} from 'react';
 import { Row,Col } from 'antd'
 import {isMobile} from '../const';
 import Navbar from '../components/navbar';
@@ -13,6 +13,32 @@ import CustomerHolding from '../components/CustomerHoldings';
 import { BuyTableData, RecurringTableData, SellOrdersData } from '../helpers/dummydata';
 const { Content, Footer } = Layout;
 const Orders = (props) => {
+  const buySection = useRef(null);
+  const sellSection = useRef(null);
+  const recurringSection = useRef(null);
+
+
+
+  useEffect(() => {
+    if(props.scrollTo=="buy_table"){
+      window.scrollTo({
+        top: buySection.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+    if(props.scrollTo=="sell_table"){
+      window.scrollTo({
+        top: sellSection.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+    if(props.scrollTo=="recurring_table"){
+      window.scrollTo({
+        top: recurringSection.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  }, [])
   return (
     <Layout
     className="site-layout"
@@ -38,9 +64,15 @@ const Orders = (props) => {
           
         
         
-        <BuyOrders  tabledata={ BuyTableData } className='mb-5 mb-xl-8'/>
-        <RecurringOrders tabledata={ RecurringTableData } className='mb-5 mb-xl-8'/>
-        <SellOrders  tableData={ SellOrdersData  } className='mb-5 mb-xl-8'/>
+        <div ref={buySection}>
+          <BuyOrders  tabledata={ BuyTableData } className='mb-5 mb-xl-8'/>
+        </div>
+        <div ref={recurringSection}>
+          <RecurringOrders tabledata={ RecurringTableData } className='mb-5 mb-xl-8'/>
+        </div>
+        <div ref={sellSection}>
+          <SellOrders  tableData={ SellOrdersData  } className='mb-5 mb-xl-8'/>
+        </div>
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }} >

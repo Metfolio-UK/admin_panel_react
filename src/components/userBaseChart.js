@@ -8,7 +8,7 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 
-const UserBaseChart = ({ chartColor, chartHeight, changeMenu}) => {
+const UserBaseChart = ({ chartColor, chartHeight, changeMenu, scrollToPosition}) => {
   const chartRef = useRef(null);
   const cssStyle = {
    
@@ -116,6 +116,7 @@ letterSpacing: '0em',
         <Link to='/users'>
         <Row onClick={()=>{
           changeMenu(2);
+          scrollToPosition('user_table');
         }} style={cssStyle.seeAll}>
             <div style={{marginRight:'4px'}}>See All</div>
             <ArrowRightOutlined/>
