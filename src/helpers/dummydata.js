@@ -51,6 +51,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Receive with bank',
         method_type:'Pending',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'23:11:34',
         date:'17/05/2023',
     },
@@ -63,6 +65,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Pay With Bank',
         method_type:'Low Risk',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'21:11:33',
         date:'17/05/2023',
     },
@@ -75,6 +79,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Card',
         method_type:'Medium Risk',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'23:11:34',
         date:'17/05/2023',
     },
@@ -87,6 +93,8 @@ export const SellOrdersData = [
         quantity_type:'PG Account',
         method:'Pay with Bank',
         method_type:'High Risk',
+        order_type: 'Sell',
+        order_acc: 'Goal Account',
         time:'23:11:34',
         date:'17/05/2023',
     }
@@ -103,7 +111,9 @@ export const RecurringTableData = [
         method:'Apple pay',
         method_type:'High Risk',
         order_type: 'Recurring Buy',
-        order_acc: 'Daily'
+        order_acc: 'Daily',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Shyam Vikram',
@@ -115,7 +125,9 @@ export const RecurringTableData = [
         method:'Card',
         method_type:'Low Risk',
         order_type: 'Recurring Buy',
-        order_acc: '17th of every Month'
+        order_acc: '17th of every Month',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Priyen Raniga',
@@ -127,7 +139,9 @@ export const RecurringTableData = [
         method:'Card',
         method_type:'Low Risk',
         order_type: 'Recurring Buy',
-        order_acc: 'Weekly on Sunday'
+        order_acc: 'Weekly on Sunday',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Abhishek Chakram',
@@ -139,7 +153,9 @@ export const RecurringTableData = [
         method:'Barclays',
         method_type:'Medium Risk',
         order_type: 'Recurring Buy',
-        order_acc: 'Weekly on Sunday'
+        order_acc: 'Weekly on Sunday',
+        time:'21:11:33',
+        date:'17/05/2023',
     }
 ];
 
@@ -154,7 +170,9 @@ export const BuyTableData = [
         method:'Google pay',
         method_type:'Low Risk',
         order_type: 'BUY',
-        order_acc: 'PG Account'
+        order_acc: 'PG Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Shyam Vikram',
@@ -166,7 +184,9 @@ export const BuyTableData = [
         method:'Pay With Bank',
         method_type:'Low Risk',
         order_type: 'BUY',
-        order_acc: 'Goal Account'
+        order_acc: 'Goal Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Priyen Raniga',
@@ -178,7 +198,9 @@ export const BuyTableData = [
         method:'Card',
         method_type:'Medium Risk',
         order_type: 'BUY',
-        order_acc: 'PG Account'
+        order_acc: 'PG Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     },
     {
         name:'Abhishek Chakram',
@@ -190,7 +212,9 @@ export const BuyTableData = [
         method:'Pay with Bank',
         method_type:'High Risk',
         order_type: 'BUY',
-        order_acc: 'PG Account'
+        order_acc: 'PG Account',
+        time:'21:11:33',
+        date:'17/05/2023',
     }
 ];
 
@@ -204,6 +228,7 @@ export const ProfileDetails = [
     }
 ];
 
+<<<<<<< HEAD
 export const InventoryTableData = [
     {
         name:'Meeren Raniga',
@@ -242,3 +267,86 @@ export const InventoryTableData = [
         date:'17/05/2023',
     }
 ];
+=======
+export const goalOrderPopupData= {
+    image:'images/goal.png',
+    imageHeight: "35px",
+    imageWidth:'35px',
+    marginTop:'4px',
+    order_id:'245045',
+    name:'Meeren Raniga',
+    signupMethod :'Android',
+    time:'23:11:34',
+    date:'17/05/2023',
+    row1left:'Initial QTY',
+    row1right:'25g',
+    row2left:'Repeating',
+    row2right:'7th of Every Month',
+    row3left:'Order Type',
+    row3right:'Recurring Buy',
+    row4left:'Order',
+    row4right:'£150.00 Worth of Gold',
+    row5left:'Metfolio Fixed Fee (4%)',
+    row5right:'£12.00',
+    row6left:'Payment Method',
+    row6right:'Credit/Debit Card',
+    row7left:'Card Fees (2.7% + 20p)',
+    row7right:'£4.00',
+    row8left:'Total',
+    row8right:'£150.00'
+};
+export const buyOrderPopupData= {
+    image:'images/buy_gold.png',
+    imageHeight: "23px",
+    imageWidth:'37px',
+    marginTop:'10px',
+    order_id:'245045',
+    name:'Meeren Raniga',
+    signupMethod :'Android',
+    time:'23:11:34',
+    date:'17/05/2023',
+    row1left:'Buying For',
+    row1right:'Physical Gold Account',
+    row2left:'Order Type',
+    row2right:'Buy',
+    row3left:'Gold Value',
+    row3right:'£134.00',
+    row4left:'Gold Weight',
+    row4right:'25 grams',
+    row5left:'Metfolio Fixed Fee (4%)',
+    row5right:'£12.00',
+    row6left:'Payment Method',
+    row6right:'Credit/Debit Card',
+    row7left:'Card Fees (2.7% + 20p)',
+    row7right:'£4.00',
+    row8left:'Total',
+    row8right:'£150.00'
+};
+export const sellOrderPopupData= {
+    image:'images/sell_gold.png',
+    imageHeight: "30px",
+    imageWidth:'30px',
+    marginTop:'4px',
+    order_id:'245045',
+    name:'Meeren Raniga',
+    signupMethod :'Android',
+    time:'23:11:34',
+    date:'17/05/2023',
+    row1left:'Selling From',
+    row1right:'Physical Gold Account',
+    row2left:'Order Type',
+    row2right:'Sell',
+    row3left:'Gold Value',
+    row3right:'£134.00',
+    row4left:'Gold Weight',
+    row4right:'25 grams',
+    row5left:'Metfolio Fixed Fee (2%)',
+    row5right:'£12.00',
+    row6left:'Deposit Method',
+    row6right:'Bank',
+    row7left:'Payment Processing Fees',
+    row7right:'Free',
+    row8left:'Total Deposited',
+    row8right:'£150.00'
+};
+>>>>>>> 040dbd076e0be3ca08c3fdaaeb224d0daae1e1ba

@@ -1,11 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React,{useState} from 'react'
 import { getNameInitals, greyColor, nameSymbolColor, paginationColor, tealColor, yellowColor } from '../const';
 import { Pagination } from 'antd';
 import styled from 'styled-components';
-
+import { sellOrderPopupData } from '../helpers/dummydata';
+import OrderModal from './orderModal';
 
 const SellOrders = ({className, tableData}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
     const Page = styled(Pagination)`
         & .anticon {
             color: ${yellowColor};
@@ -119,6 +133,7 @@ const SellOrders = ({className, tableData}) => {
                 <th className='min-w-125px'>Value (£)</th>
                 <th className='min-w-125px'>Quantity (g)</th>
                 <th className='min-w-200px'>Method</th>
+                <th className='min-w-150px'>Order Type</th>
                 <th className='min-w-150px'>Timestamp</th>
                 <th className='min-w-200px text-end rounded-end'></th>
               </tr>
@@ -168,6 +183,14 @@ const SellOrders = ({className, tableData}) => {
                 </td>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary d-block mb-1 fs-6'>
+                  {item.order_type}
+                  </a>
+                  <span className=' fw-semibold  d-block fs-7' style={cssStyle.greyColor}>
+                  {item.order_acc}
+                  </span>
+                </td>
+                <td>
+                  <a href='#' className='text-dark fw-bold text-hover-primary d-block mb-1 fs-6'>
                   {item.time}
                   </a>
                   <span className=' fw-semibold  d-block fs-7' style={cssStyle.greyColor}>
@@ -177,7 +200,7 @@ const SellOrders = ({className, tableData}) => {
               
                 <td className='text-end'>
                   <a
-                    className='btn'
+                    className='btn' onClick={showModal}
                   >
                     <div className='btn' style={cssStyle.yellowButton}>View Order</div>
 
@@ -195,6 +218,8 @@ const SellOrders = ({className, tableData}) => {
         {/* end::Table container */}
         <Page style={{textAlign:'right'}} size='small' defaultCurrent={1} total={400} pageSize={4} showSizeChanger={false} />
       </div>
+      <OrderModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} data={sellOrderPopupData}/>
+
       {/* begin::Body */}
     </div>
   )
