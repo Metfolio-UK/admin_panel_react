@@ -175,7 +175,7 @@ const InventoryTable = ({className, tabledata}) => {
                   <a
                     className='btn'
                   >
-                    <div className='btn' style={cssStyle.yellowButton}>View Order</div>
+                    <div className='btn' style={cssStyle.yellowButton}>View Entry</div>
 
                   </a>
                  
