@@ -203,3 +203,42 @@ export const ProfileDetails = [
         signupmethod:'Google'
     }
 ];
+
+export const InventoryTableData = [
+    {
+        name:'Meeren Raniga',
+        device:'Super Admin',
+        value:'£8,000.00',
+        quantity:'50.454 g',
+        supplier:'Baird & Co LTD',
+        time:'23:11:34',
+        date:'17/05/2023',
+    },
+    {
+        name:'Priyen Raniga',
+        device:'Super Admin',
+        value:'£23,000',
+        quantity:'42.343 g',
+        supplier:'Baird & Co LTD',
+        time:'23:11:34',
+        date:'17/05/2023',
+    },
+    {
+        name:'Priyen Raniga',
+        device:'Super Admin',
+        value:'£33,000',
+        quantity:'10.456 g',
+        supplier:'Baird & Co LTD',
+        time:'23:11:34',
+        date:'17/05/2023',
+    },
+    {
+        name:'Priyen Raniga',
+        device:'Super Admin',
+        value:'£22,000',
+        quantity:'100.000 g',
+        supplier:'Baird & Co LTD',
+        time:'23:11:34',
+        date:'17/05/2023',
+    }
+];

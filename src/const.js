@@ -23,6 +23,9 @@ export const sellOrderChartColor='#6AA2DE';
 export const isMobile = (width) => {
     return width<768;
 }
+export const isTab = (width) => {
+    return 991<width<1093;
+}
 
 export const getNameInitals = (name) => {
     name = name.trim();
