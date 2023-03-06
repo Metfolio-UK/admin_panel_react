@@ -1,5 +1,6 @@
 export const sidebarColor = "#1E365B";
 export const yellowColor = "#E5B02C";
+export const addressColor = "#F1F2F4";
 export const dashColor = "#E4E6EF";
 export const greyColor = "#B5B5C3";
 export const nameSymbolColor = "#F5F8FA";
