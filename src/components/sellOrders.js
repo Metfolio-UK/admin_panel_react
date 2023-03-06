@@ -5,6 +5,7 @@ import { Pagination } from 'antd';
 import styled from 'styled-components';
 import { sellOrderPopupData } from '../helpers/dummydata';
 import OrderModal from './orderModal';
+import ExportDropdown from './exportDropdown';
 
 const SellOrders = ({className, tableData}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -83,6 +84,7 @@ const SellOrders = ({className, tableData}) => {
             lineHeight: '18px',
             letterSpacing: '0em',
             color:'white',
+            cursor:'pointer',
         },
         tealButton:{
             display:'flex',
@@ -114,7 +116,9 @@ const SellOrders = ({className, tableData}) => {
           <span className='mt-1 fw-semibold fs-7' style={cssStyle.greyColor} >£7,568 Total orders last 1 month</span>
         </h3>
         <div style={cssStyle.headerRow}>
-            <div style={cssStyle.yellowButton}>Export</div>
+            <ExportDropdown children={
+              <div style={cssStyle.yellowButton}>Export</div>
+            }/>
             <div style={{width:'10px'}}></div>
             <div style={cssStyle.tealButton}>Create</div>
         </div>

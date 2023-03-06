@@ -18,6 +18,7 @@ export const cyanColor = "#4FC9DA";
 export const greyButtonColor = "#F9F9F9";
 export const lightGreenColor = "#ECFEF4";
 export const userbasechartColor='#2F3044';
+export const dropdownSelectedColor='#f5f8fa';
 export const seeall='#4FC9DA';
 export const sellOrderChartColor='#6AA2DE';
 export const isMobile = (width) => {

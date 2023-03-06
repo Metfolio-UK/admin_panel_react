@@ -4,6 +4,7 @@ import { getNameInitals, greyColor, nameSymbolColor, paginationColor, tealColor,
 import { Pagination } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import ExportDropdown from './exportDropdown';
 
 
 const UsersTable = ({className, tableData}) => {
@@ -70,6 +71,7 @@ const UsersTable = ({className, tableData}) => {
             lineHeight: '18px',
             letterSpacing: '0em',
             color:'white',
+            cursor:'pointer',
         },
         tealButton:{
             display:'flex',
@@ -101,7 +103,9 @@ const UsersTable = ({className, tableData}) => {
           <span className='mt-1 fw-semibold fs-7' style={cssStyle.greyColor} >454 New users last 1 month</span>
         </h3>
         <div style={cssStyle.headerRow}>
-            <div style={cssStyle.yellowButton}>Export</div>
+            <ExportDropdown children={
+              <div style={cssStyle.yellowButton}>Export</div>
+            }/>
             <div style={{width:'10px'}}></div>
             <div style={cssStyle.tealButton}>Create</div>
         </div>

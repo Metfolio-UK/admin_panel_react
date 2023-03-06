@@ -5,6 +5,7 @@ import { Pagination } from 'antd';
 import styled from 'styled-components';
 import EntryModal from './entryModal';
 import { invoicePopupData } from '../helpers/dummydata';
+import ExportDropdown from './exportDropdown';
 
 
 const InventoryTable = ({className, tabledata}) => {
@@ -21,6 +22,7 @@ const InventoryTable = ({className, tabledata}) => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  
     const Page = styled(Pagination)`
         & .anticon {
             color: ${yellowColor};
@@ -84,6 +86,7 @@ const InventoryTable = ({className, tabledata}) => {
             lineHeight: '18px',
             letterSpacing: '0em',
             color:'white',
+            cursor:'pointer',
         },
         tealButton:{
             display:'flex',
@@ -115,7 +118,9 @@ const InventoryTable = ({className, tabledata}) => {
           <span className='mt-1 fw-semibold fs-7' style={cssStyle.greyColor} >Total Inventory: 6,000 grams</span>
         </h3>
         <div style={cssStyle.headerRow}>
-            <div style={cssStyle.yellowButton}>Export</div>
+            <ExportDropdown children={
+              <div style={cssStyle.yellowButton}>Export</div>
+            }/>
             <div style={{width:'10px'}}></div>
             <div style={cssStyle.tealButton}>Create</div>
         </div>
