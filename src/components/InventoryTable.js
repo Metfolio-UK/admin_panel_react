@@ -137,9 +137,9 @@ const InventoryTable = ({className, tabledata}) => {
               <div style={cssStyle.yellowButton}>Export</div>
             }/>
             <div style={{width:'10px'}}></div>
-            <a className='btn' onClick={showModal1}>
-            <div style={cssStyle.tealButton}>Create</div>
-            </a>
+           
+            <div className='btn' onClick={showModal1} style={cssStyle.tealButton}>Create</div>
+           
         </div>
       </div>
       {/* end::Header */}

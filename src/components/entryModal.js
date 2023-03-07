@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import { CloseOutlined } from '@ant-design/icons';
 import { getNameInitals, greyButtonColor, greyColor, nameSymbolColor, navyColor, yellowColor } from '../const';
 import { useNavigate } from 'react-router-dom';
+const PopupModal = styled(Modal)`
+& .ant-modal-content {
+    padding:0px;
+}
+`;
 const EntryModal = (props) => {
     const navigate = useNavigate();
-    const PopupModal = styled(Modal)`
-        & .ant-modal-content {
-            padding:0px;
-        }
-    `;
+   
         
     const cssStyle = {
         container:{

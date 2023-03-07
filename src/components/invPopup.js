@@ -1,44 +1,55 @@
 import React, {useState} from 'react'
-import { Row,Col, Modal, Input } from 'antd';
+import { Row,Col, Modal, Input, Dropdown } from 'antd';
 import styled from 'styled-components';
 import { CloseOutlined,PlusOutlined,FileAddOutlined,DownOutlined } from '@ant-design/icons';
-import { getNameInitals, greyButtonColor, greyColor, greyinput, nameSymbolColor, navyColor, yellowColor } from '../const';
-import { useNavigate } from 'react-router-dom';
-import { debounce } from 'lodash';
+import { dropdownSelectedColor, getNameInitals, greyButtonColor, greyColor, greyinput, nameSymbolColor, navyColor, yellowColor } from '../const';
 import { InventoryTableData } from '../helpers/dummydata';
-const InvPopup = (props) => {
-    const [message, setMessage] = useState('');
-    const handleChange = debounce((event) => {
-        setMessage(event.target.value);
-      },500);
-      const [message1, setMessage1] = useState('');
-    const handleChange1 = debounce((event) => {
-        setMessage1(event.target.value);
-      },500);
-      const [message2, setMessage2] = useState('');
-    const handleChange2 = debounce((event) => {
-        setMessage2(event.target.value);
-      },500);
-      const handleClick = () => {
-        InventoryTableData.push(newItem);
-        props.handleCancel1();
-      };
-      const newItem = {
-        name: 'New Item',
-        device: 'Super Admin',
-        value: '£'+message,
-        quantity: message1+' g',
-        supplier: 'New Supplier',
-        time: '12:34:56',
-        date: '03/03/2023'
-      };
-    const navigate = useNavigate();
-    const PopupModal = styled(Modal)`
+const PopupModal = styled(Modal)`
         & .ant-modal-content {
             padding:0px;
         }
     `;
+const InvPopup = (props) => {
+      const [supplier, setSupplier] = useState('');
+      const [quantity, setQuantity] = useState('');
+      const [fees, setFees] = useState('');
+      const [total_price, setTotalPrice] = useState('');
+      const [open, setOpen] = useState(false);
+
+
+      const submit = () => {
+        var today = new Date();
+        var current_time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        var current_date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+        const newItem = {
+          name: 'Meeren Raniga',
+          device: 'Super Admin',
+          value: '£'+total_price,
+          quantity: quantity+' g',
+          supplier: supplier,
+          time: current_time,
+          date: current_date,
+        };
+        InventoryTableData.push(newItem);
+        props.handleCancel1();
+      };
+      
+
+    
         
+    const CustomRow = styled(Row)`
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 2px;
+        margin-bottom: 6px;
+        border-radius: 6px;
+        padding: 4px;
+        &:hover{
+            background-color:${dropdownSelectedColor};
+            cursor:pointer;
+        }
+    `;
     const cssStyle = {
         container:{
             display:'flex',
@@ -49,7 +60,7 @@ const InvPopup = (props) => {
           },
           navyText:{
             fontFamily: 'Poppins',
-            fontSize: '16px',
+            fontSize: '14px',
             fontWeight: '600',
             letterSpacing: '0em',
             color: navyColor,
@@ -141,48 +152,90 @@ const InvPopup = (props) => {
             letterSpacing: '0em',
             color:navyColor,
             borderRadius:'12px',
-    
+            border: `1px solid ${greyinput}`
         },
+        dropdownContainer:{
+            display: 'flex',
+            flexDirection:'column',
+            padding:'8px',
+            backgroundColor:'white',
+            borderRadius:'10px',
+        },
+        rowText:{
+          marginLeft:'4px',
+          fontFamily: 'Poppins',
+          fontSize: '14px',
+          fontWeight: '500',
+          letterSpacing: '0em',
+          color: "black",
+        },
+       
     };
     return (
 
         
-        <PopupModal closable={false} footer={null} width={320}  open={props.isModalOpen1} onOk={props.handleOk1} onCancel={props.handleCancel1}>
+        <PopupModal  closable={false} footer={null} width={320}  open={props.isModalOpen1} onOk={props.handleOk1} onCancel={props.handleCancel1}>
           <div style={cssStyle.container}>
             <Row style={cssStyle.headerRow}>
                 <CloseOutlined onClick={props.handleCancel1} style={{ color:yellowColor }}/>
-                
-                
             </Row>
             
             <Row style={cssStyle.contentRow}>
-                <div style={cssStyle.navyText}>Supplier</div>
-                <div style={{...cssStyle.fadedContainer,justifyContent:'right'}} ><DownOutlined style={{ color:yellowColor,padding:'10px' }}/></div>
+            <div style={cssStyle.navyText}>Supplier</div>
+            <Dropdown 
+              onOpenChange={(curr)=>{ setOpen(curr); }}
+              open={open}
+              dropdownRender={() => (
+                <div style={cssStyle.dropdownContainer}>
+                    <CustomRow onClick={()=>{ setOpen(false); setSupplier('Baird & Co LTD'); }}>
+                        <div style={cssStyle.rowText} >Baird & Co LTD</div>
+                    </CustomRow>
+                </div>
+            )}
+            trigger={['click']}>
+                <div style={{...cssStyle.fadedContainer,justifyContent:'space-between'}} >
+                  <div style={{ marginLeft:'8px' }}>{supplier}</div>
+                  <DownOutlined style={{ color:yellowColor,marginRight:'8px' }}/></div>
+            </Dropdown>
+                
+                
             </Row>
             <Row style={cssStyle.contentRow}>
                 <div style={cssStyle.navyText}>Quantity (g)</div>
-                <Input style={cssStyle.fadedContainer} defaultValue={message} onPressEnter={handleChange}></Input>
+                <Input style={cssStyle.fadedContainer} 
+                  onChange={(e)=>{
+                    setQuantity(e.target.value);
+                  }}
+                ></Input>
             </Row>
             <Row style={cssStyle.contentRow}>
                 <div style={cssStyle.navyText}>Fees (%)</div>
-                <Input style={cssStyle.fadedContainer} defaultValue={message1} onPressEnter={handleChange1}></Input>
+                <Input style={cssStyle.fadedContainer}
+                  onChange={(e)=>{
+                    setFees(e.target.value);
+                  }}
+                ></Input>
             </Row>
             <Row style={cssStyle.contentRow}>
                 <div style={cssStyle.navyText}>Total Price</div>
-                <Input style={cssStyle.fadedContainer} defaultValue={message2} onPressEnter={handleChange2}></Input>
+                <Input style={cssStyle.fadedContainer} 
+                  onChange={(e)=>{
+                    setTotalPrice(e.target.value);
+                  }}
+                ></Input>
             </Row>
             <Row style={cssStyle.contentRow}>
                 <div style={cssStyle.navyText}>Invoice</div>
                 <Row style={{justifyContent:'space-between'}}>
-                <div style={{...cssStyle.fadedContainer,flexGrow:'1',marginRight:'10px'}} ><FileAddOutlined style={{ color:yellowColor,padding:'5px',fontSize:'18px',marginRight:'30px'}}/>drag and drop files here</div>
-                <div style={{...cssStyle.fadedContainer,padding:'10px'}} ><PlusOutlined style={{ color:yellowColor,fontSize:'18px' }}/></div>
+                  <div style={{...cssStyle.fadedContainer,flexGrow:'1',marginRight:'10px'}} ><FileAddOutlined style={{ color:yellowColor,padding:'5px',fontSize:'18px',marginRight:'30px'}}/>drag and drop files here</div>
+                  <div style={{...cssStyle.fadedContainer,padding:'10px'}} ><PlusOutlined style={{ color:yellowColor,fontSize:'18px' }}/></div>
                 </Row>
                 
             </Row>
             
             
-            <div style={{height:'100px'}}/>
-            <div className='btn' style={cssStyle.downloadButton} onClick={handleClick}>Confirm Entry</div>   
+            <div style={{height:'80px'}}/>
+            <div className='btn' style={cssStyle.downloadButton} onClick={submit}>Confirm Entry</div>   
           </div>
         </PopupModal>
       
