@@ -21,6 +21,8 @@ export const userbasechartColor='#2F3044';
 export const dropdownSelectedColor='#f5f8fa';
 export const seeall='#4FC9DA';
 export const sellOrderChartColor='#6AA2DE';
+export const greyinput='#EAEAEA';
+
 export const isMobile = (width) => {
     return width<768;
 }
