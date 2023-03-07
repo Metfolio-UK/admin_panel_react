@@ -1,13 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React,{useState} from 'react'
 import { addressColor, getNameInitals, greyColor, nameSymbolColor, paginationColor, sidebarColor, tealColor, yellowColor } from '../const';
 import { Pagination } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import ExportDropdown from './exportDropdown';
+import ViewDeliveryModal from './viewDeliveryModal';
+import { deliveryOrderPopupData } from '../helpers/dummydata';
 
 
 const DeliveryToDoTable = ({className, tableData}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
     const Page = styled(Pagination)`
         & .anticon {
             color: ${yellowColor};
@@ -213,7 +228,7 @@ const DeliveryToDoTable = ({className, tableData}) => {
               
                 <td className='text-end'>        
                     <div style={cssStyle.btnCol}>
-                        <div className='btn' style={cssStyle.yellowButton}>View Order</div>
+                        <div className='btn' onClick={showModal} style={cssStyle.yellowButton}>View Order</div>
                         <div style={{height:'10px'}}/>
                         <div className='btn' style={cssStyle.navyButton}>Mark Done</div>
                     </div>
@@ -229,6 +244,8 @@ const DeliveryToDoTable = ({className, tableData}) => {
         {/* end::Table container */}
         <Page style={{textAlign:'right'}} size='small' defaultCurrent={1} total={400} pageSize={4} showSizeChanger={false} />
       </div>
+      <ViewDeliveryModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} data={deliveryOrderPopupData}/>
+
       {/* begin::Body */}
     </div>
   )

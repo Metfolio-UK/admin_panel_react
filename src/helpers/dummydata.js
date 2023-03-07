@@ -460,3 +460,28 @@ export const invoicePopupData= {
     row5left:'Total',
     row5right:'£2,595.00',
 };
+
+export const deliveryOrderPopupData= {
+    image:'images/delivery.png',
+    imageHeight: "21px",
+    imageWidth:'37px',
+    marginTop:'20px',
+    order_id:'245045',
+    name:'Meeren Raniga',
+    signupMethod :'Android',
+    time:'23:11:34',
+    date:'17/05/2023',
+    row1left:'Delivering From',
+    row1right:'Physical Gold Account',
+    row2left:'Order Type',
+    row2right:'Delivery',
+    row3left:'Delivery Item',
+    row3right:'Metfolio 50g Gold Bar',
+    row4left:'Bar Purity',
+    row4right:'24kt (99.99)',
+    row5left:'Delivery Address',
+    row5right:'6 Ludham Close',
+    row6right:'Ilford',
+    row7right:'IG62GH',
+    row8right:'United Kingdom',
+};
