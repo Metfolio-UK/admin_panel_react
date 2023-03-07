@@ -12,6 +12,7 @@ import {Login } from '../components/Login';
 import Layoutdefiner from '../components/layoutdefiner';
 import CurrentUser from './currentUser';
 import Inventory from './inventory';
+import DeliveryScreen from './delivery';
 
 
 
@@ -58,6 +59,9 @@ const Home = (props) => {
       }/>} />
       <Route exact path='/search' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
         <Search width={props.width} showDrawer={showDrawer}/>
+      }/>} />
+      <Route exact path='/delivery' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
+        <DeliveryScreen width={props.width} showDrawer={showDrawer}/>
       }/>} />
 
       <Route exact path='/currentUser' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={

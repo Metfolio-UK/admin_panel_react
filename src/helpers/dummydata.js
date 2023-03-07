@@ -82,6 +82,56 @@ export const DeliveryToDoTableData = [
         time:'23:00:00'
     }
 ];
+export const DeliveryDoneTableData = [
+    {
+        name:'Meeren Raniga',
+        device:'Android',
+        postcode: 'IG62GH',
+        address:'6 Ludham Close',
+        town:'Ilford', 
+        country: 'United Kingdom',
+        quantity:'50',
+        deliver_from:'PG Account',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    },
+    {
+        name:'Shyam Vikram',
+        device:'Android',
+        postcode: 'IG62GH',
+        address:'6 Ludham Close',
+        town:'Ilford', 
+        country: 'United Kingdom',
+        quantity:'50',
+        deliver_from:'PG Account',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    },
+    {
+        name:'Priyen Raniga',
+        device:'Android',
+        postcode: 'IG62GH',
+        address:'6 Ludham Close',
+        town:'Ilford', 
+        country: 'United Kingdom',
+        quantity:'50',
+        deliver_from:'PG Account',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    },
+    {
+        name:'Abhishek Chakram',
+        device:'Android',
+        postcode: 'IG62GH',
+        address:'6 Ludham Close',
+        town:'Ilford', 
+        country: 'United Kingdom',
+        quantity:'50',
+        deliver_from:'PG Account',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    }
+];
 
 export const SellOrdersData = [
     {

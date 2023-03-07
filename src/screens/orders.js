@@ -10,8 +10,9 @@ import { ChartsWidget1 } from '../components/Chart';
 import { InvReport } from '../components/InventoryReport';
 import AdminHolding from '../components/AdminHoldings';
 import CustomerHolding from '../components/CustomerHoldings';
-import { BuyTableData, DeliveryToDoTableData, RecurringTableData, SellOrdersData, UserTableData } from '../helpers/dummydata';
+import { BuyTableData, DeliveryDoneTableData, DeliveryToDoTableData, RecurringTableData, SellOrdersData, UserTableData } from '../helpers/dummydata';
 import DeliveryToDoTable from '../components/deliveryToDoTable';
+import DeliveryDoneTable from '../components/deliveryDoneTable';
 const { Content, Footer } = Layout;
 const Orders = (props) => {
   const buySection = useRef(null);
@@ -74,7 +75,7 @@ const Orders = (props) => {
         <div ref={sellSection}>
           <SellOrders  tableData={ SellOrdersData  } className='mb-5 mb-xl-8'/>
         </div>
-        <DeliveryToDoTable tableData={ DeliveryToDoTableData  } className='mb-5 mb-xl-8'/>
+        
       </div>
     </Content>
     <Footer style={{ textAlign: 'center' }} >

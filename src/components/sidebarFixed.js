@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppstoreOutlined,HomeOutlined,UserOutlined,SearchOutlined, GoldOutlined } from '@ant-design/icons';
+import { AppstoreOutlined,HomeOutlined,UserOutlined,SearchOutlined, GoldOutlined,CarOutlined  } from '@ant-design/icons';
 import { Col,Layout } from 'antd';
 import {sidebarColor,greyColor, menuSelectedColor, isMobile  } from '../const';
 import { Link } from "react-router-dom";
@@ -19,6 +19,7 @@ const SidebarFixed = (props) => {
   const tapped_user = props.menu == 2 ? true : false;
   const tapped_search = props.menu == 3 ? true : false;
   const tapped_inv = props.menu == 4 ? true : false;
+  const tapped_delivery = props.menu == 5 ? true : false;
 
   const HomeContainer = styled.div`
   width:100px;
@@ -99,6 +100,21 @@ const SidebarFixed = (props) => {
   }
   `;
 
+  const DeliveryContainer = styled.div`
+  width:100px;
+  height: 80px;
+  border-radius:12px;
+  align-items:center;
+  background-color: ${tapped_delivery?menuSelectedColor:null};
+  display:flex;
+  flex-direction:column;
+  margin-bottom:16px;
+  justify-content:center;
+  color: ${tapped_delivery?"white": greyColor};
+  &:hover{
+      color:white;
+  }
+  `;
 
   return (
     ( isMobile(props.width) ? <Drawer closable={false} width={120} style={{backgroundColor:sidebarColor}} bodyStyle={{ padding:'0px',display:'flex', alignItems:'center', flexDirection:'column' }}
@@ -229,6 +245,26 @@ const SidebarFixed = (props) => {
             fontWeight:'500',
           }}>Inventory</div>
         </InvContainer>
+          </a>
+        </Link>
+        <Link to='/delivery'>
+          <a>
+          <DeliveryContainer onClick={()=>{
+            props.changeMenu(5);
+            props.onClose();
+            props.scrollToPosition("");
+        }} >
+          <CarOutlined  style={{
+            fontSize:'28px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Delivery</div>
+        </DeliveryContainer>
           </a>
         </Link>
         </Col>
@@ -366,6 +402,25 @@ const SidebarFixed = (props) => {
             }}>Inventory</div>
           </InvContainer>
         </a>
+        </Link>
+        <Link to='/delivery'>
+          <a>
+          <DeliveryContainer onClick={()=>{
+            props.changeMenu(5);
+            props.scrollToPosition("");
+        }} >
+          <CarOutlined  style={{
+            fontSize:'28px',
+            fontWeight:'500',
+            
+          }}/>
+          <div style={{
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            fontWeight:'500',
+          }}>Delivery</div>
+        </DeliveryContainer>
+          </a>
         </Link>
         </Col>
       </Sider>)
