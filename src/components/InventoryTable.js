@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import EntryModal from './entryModal';
 import { invoicePopupData } from '../helpers/dummydata';
 import ExportDropdown from './exportDropdown';
+import InvPopup from './invPopup';
 
 
 const InventoryTable = ({className, tabledata}) => {
@@ -21,6 +22,20 @@ const InventoryTable = ({className, tabledata}) => {
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
+
+  const showModal1 = () => {
+    setIsModalOpen1(true);
+  };
+
+  const handleOk1 = () => {
+    setIsModalOpen1(false);
+  };
+
+  const handleCancel1 = () => {
+    setIsModalOpen1(false);
   };
   
     const Page = styled(Pagination)`
@@ -122,7 +137,9 @@ const InventoryTable = ({className, tabledata}) => {
               <div style={cssStyle.yellowButton}>Export</div>
             }/>
             <div style={{width:'10px'}}></div>
+            <a className='btn' onClick={showModal1}>
             <div style={cssStyle.tealButton}>Create</div>
+            </a>
         </div>
       </div>
       {/* end::Header */}
@@ -211,6 +228,7 @@ const InventoryTable = ({className, tabledata}) => {
         {/* end::Table container */}
         <Page style={{textAlign:'right'}} size='small' defaultCurrent={1} total={400} pageSize={4} showSizeChanger={false} />
       </div>
+      <InvPopup isModalOpen1={isModalOpen1} handleOk1={handleOk1} handleCancel1={handleCancel1} data={invoicePopupData}/>
       <EntryModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} data={invoicePopupData}/>
       {/* begin::Body */}
     </div>
