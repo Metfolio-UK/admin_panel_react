@@ -124,7 +124,7 @@ const TeamMemberTable  = ({className, tableData}) => {
             {/* begin::Table head */}
             <thead>
               <tr className='fw-bold' style={{...cssStyle.greyColor,...cssStyle.lightBg}}>
-                <th className='ps-4 min-w-300px rounded-start' style={{color:'black'}}>User</th>
+                <th className='ps-4 min-w-300px rounded-start'>User</th>
                 <th className='min-w-200px'>Email</th>
                 <th className='min-w-125px'>Created on</th>
                 <th className='min-w-200px text-end rounded-end'></th>

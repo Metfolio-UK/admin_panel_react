@@ -93,7 +93,7 @@ const Navbar = (props) => {
                     marginRight:'8px',
                     backgroundColor: sidebarColor,
                     border:`1px solid ${yellowColor}`
-                  }}>
+                    }}>
                     <UserOutlined style={{ fontSize:'20px', color:'white' }}/>
                   </div>
                 </Link>

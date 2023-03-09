@@ -120,7 +120,7 @@ const UsersTable = ({className, tableData}) => {
             {/* begin::Table head */}
             <thead>
               <tr className='fw-bold' style={{...cssStyle.greyColor,...cssStyle.lightBg}}>
-                <th className='ps-4 min-w-300px rounded-start' style={{color:'black'}}>User</th>
+                <th className='ps-4 min-w-300px rounded-start'>User</th>
                 <th className='min-w-200px'>Verification Status</th>
                 <th className='min-w-150px'>Date Of Birth</th>
                 <th className='min-w-200px'>Signed up with</th>
