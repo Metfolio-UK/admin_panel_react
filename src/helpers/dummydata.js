@@ -485,3 +485,33 @@ export const deliveryOrderPopupData= {
     row7right:'IG62GH',
     row8right:'United Kingdom',
 };
+export const TeamMeamberTableData = [
+    {
+        name:'Meeren Raniga',
+        user_type:'Super Admin',
+        email:'meeren@metfolio.com',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    },
+    {
+        name:'Shyam Vikram',
+        user_type:'View Only',
+        email:'shyam@metfolio.com',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    },
+    {
+        name:'Priyen Raniga',
+        user_type:'Admin',
+        email:'priyen@metfolio.com',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    },
+    {
+        name:'Abhishek Chakram',
+        user_type:'Super Admin',
+        email:'abhishek@metfolio.com',
+        createdon:'17/02/23',
+        time:'23:00:00'
+    }
+];

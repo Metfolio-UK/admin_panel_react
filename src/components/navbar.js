@@ -3,6 +3,8 @@ import { SearchOutlined,MenuOutlined } from '@ant-design/icons';
 import { Col,Row } from 'antd';
 import { dashColor, greyColor, isMobile, sidebarColor,yellowColor } from '../const';
 import { Input } from 'antd';
+import { UserOutlined} from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
   return (
@@ -64,16 +66,38 @@ const Navbar = (props) => {
               }}>
               Gold(g) ~ £49.56
               </div>
-              <div style={{
-                height:'40px',
-                width:'36px',
-                backgroundColor: sidebarColor,
-                border:`1px solid ${yellowColor}`
-              }}></div>
+              <Link to='/profile'>
+                <div className='btn' style={{
+                  height:'40px',
+                  width:'36px',
+                  display:'flex',
+                  justifyContent:'center',
+                  alignItems:'center',
+                  backgroundColor: sidebarColor,
+                  border:`1px solid ${yellowColor}`
+                }}>
+                  <UserOutlined style={{ fontSize:'20px', color:'white' }}/>
+                </div>
+              </Link>
             </Row>}
             {
               isMobile(props.width) && 
-              <div 
+              <Row>
+                <Link to='/profile'>
+                  <div className='btn' style={{
+                    height:'40px',
+                    width:'36px',
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center',
+                    marginRight:'8px',
+                    backgroundColor: sidebarColor,
+                    border:`1px solid ${yellowColor}`
+                  }}>
+                    <UserOutlined style={{ fontSize:'20px', color:'white' }}/>
+                  </div>
+                </Link>
+                <div 
               onClick={props.showDrawer}
                style={{
                 height:'40px',
@@ -90,6 +114,7 @@ const Navbar = (props) => {
               }}>
              <MenuOutlined />
               </div>
+              </Row>
             }
           </Row>
           {/* { isMobile(props.width) &&
