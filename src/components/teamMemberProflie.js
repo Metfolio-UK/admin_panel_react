@@ -90,11 +90,11 @@ const TeamMemberProfile = (props) => {
         <Col style={cssStyle.containerProfileBottom}>
             <Row style={cssStyle.space}>
               <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Full Name</Col>
-              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{ProfileDetails[0].fullname}</Col>
+              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{props.fullname}</Col>
             </Row>
             <Row style={cssStyle.space}>
             <Col xs={24} sm={24} md={8} style={cssStyle.formLeft}>Email Address</Col>
-              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{ProfileDetails[0].email}</Col>
+              <Col xs={24} sm={24} md={16} style={cssStyle.formRight}>{props.email}</Col>
             </Row>
             
 

@@ -169,7 +169,7 @@ const TeamMemberTable  = ({className, tableData}) => {
                 </td>
               
                 <td className='text-end'>
-                  <Link to='/profile'>
+                  <Link to='/teamMemberProfile'>
                   <a
                     className='btn'
                   >

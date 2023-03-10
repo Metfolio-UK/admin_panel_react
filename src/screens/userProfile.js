@@ -11,11 +11,7 @@ import { TeamMeamberTableData } from '../helpers/dummydata';
 const { Content, Footer } = Layout;
 
 const UserProfile  = (props) => {
-    const [checked, setChecked] = useState(false);
     const [tabs, setTabs] = useState(0);
-    const onChange = () =>{
-        setChecked(!checked);
-    }
     const cssStyle = {
         container:{
           display:'flex',
@@ -261,7 +257,7 @@ const UserProfile  = (props) => {
 
         <Col>
           { tabs === 0 ?
-          <TeamMemberProfile /> :
+          <TeamMemberProfile fullname="Meeren Rainga" email="meeren@metfolio.com"/> :
             <div style={{ marginTop:'30px' }}>
                 <TeamMemberTable tableData={ TeamMeamberTableData  } className='mb-5 mb-xl-8'/>
 

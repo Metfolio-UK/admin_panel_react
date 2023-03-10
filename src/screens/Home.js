@@ -14,6 +14,8 @@ import CurrentUser from './currentUser';
 import Inventory from './inventory';
 import DeliveryScreen from './delivery';
 import UserProfile from './userProfile';
+import { TeamMeamberTableData } from '../helpers/dummydata';
+import TeamMemberProfileScreen from './teamMemberProfile';
 
 
 
@@ -69,8 +71,12 @@ const Home = (props) => {
         <CurrentUser width={props.width} showDrawer={showDrawer}/>
       }/>} />
       <Route exact path='/profile' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
-        <UserProfile width={props.width} showDrawer={showDrawer}/>
+        <UserProfile  width={props.width} showDrawer={showDrawer}/>
       }/>} />
+      <Route exact path='/teamMemberProfile' element={<Layoutdefiner menu={menu} changeMenu={changeMenu} width={props.width} open={open} onClose={onClose} children={
+        <TeamMemberProfileScreen  width={props.width} showDrawer={showDrawer}/>
+      }/>} />
+      
     </Routes>
 
     
